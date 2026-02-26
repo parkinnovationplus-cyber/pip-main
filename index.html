@@ -22,6 +22,218 @@
       --white-10: rgba(255,255,255,0.10);
       --border-light: rgba(255,255,255,0.05);
     }
+
+    /* ===== LIGHT MODE ===== */
+    body.light {
+      --bg-deep: #f0f4f8;
+      --bg-card: #ffffff;
+      --bg-section: #e8edf3;
+      --slate-200: #1e293b;
+      --slate-300: #334155;
+      --slate-400: #475569;
+      --slate-500: #64748b;
+      --slate-600: #94a3b8;
+      --slate-800: #cbd5e1;
+      --white-5: rgba(0,0,0,0.04);
+      --white-10: rgba(0,0,0,0.08);
+      --border-light: rgba(0,0,0,0.08);
+    }
+    body.light { background: var(--bg-deep); color: #1e293b; }
+
+    /* NAV */
+    body.light nav.scrolled { background: rgba(240,244,248,0.97); box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+    body.light .nav-brand-title { color: #0A192F; }
+    body.light .nav-brand-sub { color: #475569; }
+    body.light .nav-links a { color: #334155; }
+    body.light .nav-links a:hover { color: #0A192F; }
+    body.light .nav-links a::after { background: #0A192F; }
+    body.light .hamburger { color: #0A192F; }
+    body.light .mobile-menu { background: #f0f4f8; border-top: 1px solid rgba(0,0,0,0.1); }
+    body.light .mobile-menu a { color: #334155; }
+    body.light .btn-quote { background: #0A192F; color: #fff; }
+    body.light .btn-quote:hover { background: #1e293b; }
+
+    /* SIDEBAR */
+    body.light #sidebar { background: #f0f4f8; border-right: 1px solid rgba(0,0,0,0.1); }
+    body.light .sidebar-head { background: #fff; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    body.light .sidebar-head-title h2 { color: #0A192F; }
+    body.light .sidebar-pkg { background: #fff; border-color: rgba(0,0,0,0.08); }
+    body.light .sidebar-pkg-tag { color: #64748b; }
+    body.light .sidebar-pkg-name { color: #0A192F; }
+    body.light .sidebar-pkg-price { color: #1e293b; }
+    body.light .sidebar-pkg-price-label { color: #64748b; }
+    body.light .sidebar-pkg li { color: #475569; }
+    body.light #sidebar-trigger { background: #0A192F; color: #fff; }
+
+    /* HERO */
+    body.light .hero-title { color: #0A192F; }
+    body.light .hero-title span { background: linear-gradient(to right, #0A192F, #475569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    body.light .hero-sub { color: #475569; }
+    body.light .hero-badge { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #475569; }
+    body.light #หน้าแรก { background: linear-gradient(135deg, #e8edf3 0%, #f0f4f8 50%, #dde4ee 100%); }
+    body.light .hero-bg { background: linear-gradient(to left, rgba(56,189,248,0.08), transparent); }
+    body.light .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(226,232,240,0.7));
+      border-color: rgba(56,189,248,0.15);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
+      backdrop-filter: blur(12px);
+    }
+    body.light .hero-lpr-badge { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    body.light .lpr-label { color: #64748b; }
+    body.light .lpr-plate { color: #0A192F; }
+    body.light .hero-bar { background: linear-gradient(to right, #38BDF8, transparent); }
+    body.light .hero-brand-badge { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    body.light .hero-brand-badge span { color: #475569; }
+    body.light .lpr-label { color: #475569; }
+    body.light .lpr-plate { color: #0A192F; }
+    body.light .hero-brand-badge span { color: #475569; }
+
+    /* SECTIONS */
+    body.light .section-title { color: #0A192F; }
+    body.light .section-sub { color: #475569; }
+    body.light .section-line { background: #0A192F; }
+
+    /* PACKAGES */
+    body.light .pkg-card { background: #fff; border-color: transparent; box-shadow: none; }
+    body.light .pkg-tag { color: #64748b; }
+    body.light .pkg-name { color: #0A192F; }
+    body.light .pkg-price { color: #0A192F; }
+    body.light .pkg-price-label { color: #64748b; }
+    body.light .pkg-desc { color: #475569; }
+    body.light .pkg-feature { color: #475569; }
+    body.light .pkg-feature svg { color: #64748b; }
+    body.light .btn-pkg { background: #0A192F; color: #fff; }
+
+    /* HARDWARE */
+    body.light .hw-title { color: #0A192F; }
+    body.light .hw-desc { color: #475569; }
+    body.light .hw-spec { color: #64748b; }
+
+    /* SOFTWARE */
+    body.light .sw-title { color: #0A192F; }
+    body.light .sw-sub { color: #475569; }
+    body.light .sw-feat-title { color: #0A192F; }
+    body.light .sw-feat-desc { color: #475569; }
+    body.light .sw-app-title { color: #0A192F; }
+    body.light .sw-app-item-title { color: #0A192F; }
+    body.light .sw-app-item-desc { color: #475569; }
+
+    /* SERVICE / STATS */
+    body.light .svc-title { color: #0A192F; }
+    body.light .svc-stat-num { color: #0A192F; }
+    body.light .svc-stat-label { color: #475569; }
+    body.light .svc-item-title { color: #0A192F; }
+    body.light .svc-item-desc { color: #475569; }
+
+    /* FOOTER */
+    body.light footer { background: #1e293b; border-top: 1px solid rgba(0,0,0,0.1); }
+    body.light .footer-inner { color: #94a3b8; }
+    body.light .footer-desc { color: #94a3b8; }
+    body.light .footer-contact-item { color: #94a3b8; }
+    body.light .footer-bottom { color: #64748b; border-top: 1px solid rgba(255,255,255,0.08); }
+    body.light .footer-brand-name { color: #fff; }
+    body.light .footer-col-title { color: #fff; }
+    body.light .footer-link { color: #94a3b8; }
+    body.light .footer-copy { color: #64748b; }
+
+    /* CHAT */
+    body.light #chat-box { background: #fff; border-color: rgba(0,0,0,0.1); }
+    body.light .chat-head { background: #0A192F; }
+    body.light .chat-head-name { color: #fff; }
+    body.light .chat-head-status { color: #94a3b8; }
+    body.light .msg-bubble.bot { background: #e8edf3; color: #1e293b; }
+    body.light .msg-bubble.user { background: #0A192F; color: #fff; }
+    body.light #chat-input { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.1); }
+    body.light #chat-input::placeholder { color: #94a3b8; }
+
+    /* MODAL */
+    body.light .modal-box { background: #fff; }
+    body.light .modal-title { color: #0A192F; }
+    body.light .modal-sub { color: #475569; }
+    body.light .form-label { color: #334155; }
+    body.light .form-input { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.12); }
+    body.light .form-input::placeholder { color: #94a3b8; }
+    body.light .success-title { color: #0A192F; }
+    body.light .success-sub { color: #475569; }
+
+    /* HARDWARE CARDS */
+    body.light .hw-card { background: #fff; border-color: rgba(0,0,0,0.08); }
+    body.light .hw-title { color: #0A192F; }
+    body.light .hw-desc { color: #475569; }
+    body.light .hw-icon { background: rgba(0,0,0,0.04); color: #334155; }
+
+    /* SOFTWARE */
+    body.light #ระบบซอฟต์แวร์ { background: #f8fafc; }
+    body.light .sw-title { color: #0A192F; }
+    body.light .sw-feat { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+    body.light .sw-feat:hover { background: rgba(0,0,0,0.06); }
+    body.light .sw-feat-title { color: #0A192F; }
+    body.light .sw-feat-desc { color: #475569; }
+    body.light .sw-mockup { background: #fff; border-color: rgba(0,0,0,0.08); box-shadow: 0 25px 60px rgba(0,0,0,0.08); }
+    body.light .sw-mock-bar { background: rgba(0,0,0,0.06); }
+    body.light .sw-mock-card { background: rgba(0,0,0,0.04); }
+    body.light .sw-app-section { background: #fff; border-color: rgba(0,0,0,0.08); }
+    body.light .sw-app-title { color: #0A192F; }
+    body.light .sw-app-desc { color: #475569; }
+    body.light .sw-app-item-title { color: #0A192F; }
+    body.light .sw-app-item-desc { color: #64748b; }
+    body.light .sw-app-item:hover { background: rgba(0,0,0,0.03); }
+
+    /* SERVICE CARD */
+    body.light #ติดต่อเรา { background: linear-gradient(to bottom, #e8edf3, #f0f4f8); }
+    body.light .svc-card { background: #fff; border-color: rgba(0,0,0,0.08); box-shadow: 0 25px 60px rgba(0,0,0,0.08); }
+    body.light .svc-title { color: #0A192F; }
+    body.light .svc-desc { color: #475569; }
+    body.light .svc-stat-num { color: #0A192F; }
+    body.light .svc-stat-label { color: #64748b; }
+    body.light .btn-svc { background: #0A192F; color: #fff; }
+
+    /* PACKAGES SECTION */
+    body.light #แพ็กเกจ { background: #f0f4f8; border-color: rgba(0,0,0,0.06); }
+    body.light .pkg-overflow { box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04); background: #fff; border: none; }
+    body.light .pkg-card { background: #fff; border-color: transparent; box-shadow: none; }
+    body.light .pkg-tag { color: #64748b; }
+    body.light .pkg-name { color: #0A192F; }
+    body.light .pkg-price { color: #0A192F; }
+    body.light .pkg-price-label { color: #64748b; }
+    body.light .pkg-feature { color: #475569; }
+    body.light .carousel-btn { background: rgba(0,0,0,0.06); color: #334155; border-color: rgba(0,0,0,0.1); }
+    body.light .carousel-btn:hover { background: #0A192F; color: #fff; }
+
+    /* HARDWARE SECTION */
+    body.light #อุปกรณ์อัจฉริยะ { background: #f8fafc; }
+
+    /* ===== THEME TOGGLE BUTTON ===== */
+    #theme-toggle {
+      background: var(--white-5);
+      border: 1px solid var(--white-10);
+      color: var(--slate-300);
+      width: 2.25rem; height: 2.25rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    #theme-toggle:hover { background: var(--white-10); color: #fff; transform: rotate(20deg); }
+
+    /* ===== BACK TO TOP ===== */
+    #back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem;
+      z-index: 60;
+      background: var(--slate-200); color: var(--bg-deep);
+      width: 3rem; height: 3rem;
+      border-radius: 50%;
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      opacity: 0; transform: translateY(1rem);
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+    #back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #back-to-top:hover { transform: translateY(-4px); background: #fff; }
+    body.light #back-to-top { background: #0A192F; color: #fff; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -143,6 +355,8 @@
       min-height: 100vh; display: flex; align-items: center; padding-top: 5rem;
       position: relative; overflow: hidden;
     }
+    .hero-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(148,163,184,0.15) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; opacity: 0; transition: opacity 0.5s; }
+    body.light .hero-dots { opacity: 1; }
     .hero-bg { position: absolute; top:0; right:0; width:50%; height:100%; background: linear-gradient(to left, rgba(30,58,138,0.15), transparent); pointer-events:none; }
     .hero-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; position:relative; z-index:1; }
     .hero-badge {
@@ -195,7 +409,7 @@
     .section-line { width: 6rem; height: 4px; background: var(--slate-400); margin: 1rem auto; }
     .section-sub { color: var(--slate-400); font-weight: 300; }
     .pkg-carousel { position: relative; padding: 0 3.5rem; }
-    .pkg-overflow { overflow: hidden; }
+    .pkg-overflow { overflow: hidden; border-radius: 2.5rem; }
     .pkg-track { display: flex; transition: transform 0.7s ease; }
     .pkg-slide { width: 100%; flex-shrink: 0; padding: 0 0.5rem; }
     .pkg-card {
@@ -583,6 +797,7 @@
       <a href="#ระบบซอฟต์แวร์">ระบบซอฟต์แวร์</a>
       <a href="#ติดต่อเรา">ติดต่อเรา</a>
       <button class="btn-quote" onclick="openModal()">ขอใบเสนอราคา</button>
+      <button id="theme-toggle" onclick="toggleTheme()" title="เปลี่ยนธีม"><svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
     </div>
     <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -601,6 +816,7 @@
 <!-- HERO -->
 <section id="หน้าแรก">
   <div class="hero-bg"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
   <div class="hero-inner">
     <div>
       <div class="reveal" style="transition-delay:100ms">
@@ -836,7 +1052,7 @@
       </div>
       <div class="footer-contact-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span>parkinnovationplus@gmail.com</span>
+        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1969786b72707777766f786d70767769756c6a597e74787075377a7674">[email&#160;protected]</a></span>
       </div>
     </div>
     <div>
@@ -886,7 +1102,7 @@
   </button>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ===== CONFIG =====
 const apiKey = "";
 const modelName = "gemini-2.5-flash-preview-09-2025";
@@ -1116,13 +1332,42 @@ async function sendMessage() {
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
 revealEls.forEach(el => observer.observe(el));
+
+// ===== DARK / LIGHT MODE =====
+function toggleTheme() {
+  const body = document.body;
+  const isLight = body.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  document.getElementById('theme-icon-moon').style.display = isLight ? 'none' : 'block';
+  document.getElementById('theme-icon-sun').style.display = isLight ? 'block' : 'none';
+}
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light');
+  document.getElementById('theme-icon-moon').style.display = 'none';
+  document.getElementById('theme-icon-sun').style.display = 'block';
+}
+
 </script>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" onclick="scrollToTop()" title="กลับขึ้นด้านบน">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// ===== BACK TO TOP =====
+const backToTopBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTopBtn.classList.toggle('show', window.scrollY > 400);
+});
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
 </body>
 </html>
