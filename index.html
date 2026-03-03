@@ -5,45 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Park Innovation Plus</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
   <style>
     :root {
-      --bg-deep: #0A192F;
-      --bg-card: #111827;
-      --bg-section: #0D1B2A;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-800: #1e293b;
+      --bg-deep: #0A192F; --bg-card: #111827; --bg-section: #0D1B2A;
+      --slate-200: #e2e8f0; --slate-300: #cbd5e1; --slate-400: #94a3b8;
+      --slate-500: #64748b; --slate-600: #475569; --slate-800: #1e293b;
       --blue-400: #38BDF8;
-      --white-5: rgba(255,255,255,0.05);
-      --white-10: rgba(255,255,255,0.10);
+      --white-5: rgba(255,255,255,0.05); --white-10: rgba(255,255,255,0.10);
       --border-light: rgba(255,255,255,0.05);
     }
-
-    /* ===== LIGHT MODE ===== */
     body.light {
-      --bg-deep: #f0f4f8;
-      --bg-card: #ffffff;
-      --bg-section: #e8edf3;
-      --slate-200: #1e293b;
-      --slate-300: #334155;
-      --slate-400: #475569;
-      --slate-500: #64748b;
-      --slate-600: #94a3b8;
-      --slate-800: #cbd5e1;
-      --white-5: rgba(0,0,0,0.04);
-      --white-10: rgba(0,0,0,0.08);
+      --bg-deep: #f0f4f8; --bg-card: #ffffff; --bg-section: #e8edf3;
+      --slate-200: #1e293b; --slate-300: #334155; --slate-400: #475569;
+      --slate-500: #64748b; --slate-600: #94a3b8; --slate-800: #cbd5e1;
+      --white-5: rgba(0,0,0,0.04); --white-10: rgba(0,0,0,0.08);
       --border-light: rgba(0,0,0,0.08);
     }
     body.light { background: var(--bg-deep); color: #1e293b; }
-
-    /* NAV */
     body.light nav.scrolled { background: rgba(240,244,248,0.97); box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
     body.light .nav-brand-title { color: #0A192F; }
-    body.light .nav-brand-sub { color: #475569; }
     body.light .nav-links a { color: #334155; }
     body.light .nav-links a:hover { color: #0A192F; }
     body.light .nav-links a::after { background: #0A192F; }
@@ -51,278 +31,129 @@
     body.light .mobile-menu { background: #f0f4f8; border-top: 1px solid rgba(0,0,0,0.1); }
     body.light .mobile-menu a { color: #334155; }
     body.light .btn-quote { background: #0A192F; color: #fff; }
-    body.light .btn-quote:hover { background: #1e293b; }
-
-    /* SIDEBAR */
-    body.light #sidebar { background: #f0f4f8; border-right: 1px solid rgba(0,0,0,0.1); }
-    body.light .sidebar-head { background: #fff; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    body.light #sidebar { background: #f0f4f8; }
+    body.light .sidebar-head { background: #fff; }
     body.light .sidebar-head-title h2 { color: #0A192F; }
     body.light .sidebar-pkg { background: #fff; border-color: rgba(0,0,0,0.08); }
-    body.light .sidebar-pkg-tag { color: #64748b; }
     body.light .sidebar-pkg-name { color: #0A192F; }
     body.light .sidebar-pkg-price { color: #1e293b; }
-    body.light .sidebar-pkg-price-label { color: #64748b; }
-    body.light .sidebar-pkg li { color: #475569; }
     body.light #sidebar-trigger { background: #0A192F; color: #fff; }
-
-    /* HERO */
+    body.light #หน้าแรก { background: linear-gradient(135deg,#e8edf3,#f0f4f8,#dde4ee); }
+    body.light .hero-dots { opacity: 1; }
     body.light .hero-title { color: #0A192F; }
-    body.light .hero-title span { background: linear-gradient(to right, #0A192F, #475569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    body.light .hero-title span { background: linear-gradient(to right,#0A192F,#475569); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
     body.light .hero-sub { color: #475569; }
     body.light .hero-badge { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #475569; }
-    body.light #หน้าแรก { background: linear-gradient(135deg, #e8edf3 0%, #f0f4f8 50%, #dde4ee 100%); }
-    body.light .hero-bg { background: linear-gradient(to left, rgba(56,189,248,0.08), transparent); }
-    body.light .hero-card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(226,232,240,0.7));
-      border-color: rgba(56,189,248,0.15);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
-      backdrop-filter: blur(12px);
-    }
-    body.light .hero-lpr-badge { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    body.light .lpr-label { color: #64748b; }
-    body.light .lpr-plate { color: #0A192F; }
-    body.light .hero-bar { background: linear-gradient(to right, #38BDF8, transparent); }
-    body.light .hero-brand-badge { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    body.light .hero-brand-badge span { color: #475569; }
-    body.light .lpr-label { color: #475569; }
-    body.light .lpr-plate { color: #0A192F; }
-    body.light .hero-brand-badge span { color: #475569; }
-
-    /* SECTIONS */
+    body.light .hero-card { background: linear-gradient(135deg,rgba(255,255,255,0.9),rgba(226,232,240,0.7)); border-color: rgba(56,189,248,0.15); }
+    body.light .hero-lpr-badge, body.light .hero-brand-badge { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.08); }
+    body.light .lpr-plate, body.light .lpr-label { color: #475569; }
     body.light .section-title { color: #0A192F; }
-    body.light .section-sub { color: #475569; }
     body.light .section-line { background: #0A192F; }
-
-    /* PACKAGES */
-    body.light .pkg-card { background: #fff; border-color: transparent; box-shadow: none; }
-    body.light .pkg-tag { color: #64748b; }
+    body.light #แพ็กเกจ { background: #f0f4f8; }
+    body.light .pkg-card { background: #fff; border-color: transparent; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
     body.light .pkg-name { color: #0A192F; }
     body.light .pkg-price { color: #0A192F; }
-    body.light .pkg-price-label { color: #64748b; }
-    body.light .pkg-desc { color: #475569; }
-    body.light .pkg-feature { color: #475569; }
-    body.light .pkg-feature svg { color: #64748b; }
     body.light .btn-pkg { background: #0A192F; color: #fff; }
-
-    /* HARDWARE */
-    body.light .hw-title { color: #0A192F; }
-    body.light .hw-desc { color: #475569; }
-    body.light .hw-spec { color: #64748b; }
-
-    /* SOFTWARE */
-    body.light .sw-title { color: #0A192F; }
-    body.light .sw-sub { color: #475569; }
-    body.light .sw-feat-title { color: #0A192F; }
-    body.light .sw-feat-desc { color: #475569; }
-    body.light .sw-app-title { color: #0A192F; }
-    body.light .sw-app-item-title { color: #0A192F; }
-    body.light .sw-app-item-desc { color: #475569; }
-
-    /* SERVICE / STATS */
-    body.light .svc-title { color: #0A192F; }
-    body.light .svc-stat-num { color: #0A192F; }
-    body.light .svc-stat-label { color: #475569; }
-    body.light .svc-item-title { color: #0A192F; }
-    body.light .svc-item-desc { color: #475569; }
-
-    /* FOOTER */
-    body.light footer { background: #1e293b; border-top: 1px solid rgba(0,0,0,0.1); }
-    body.light .footer-inner { color: #94a3b8; }
-    body.light .footer-desc { color: #94a3b8; }
-    body.light .footer-contact-item { color: #94a3b8; }
-    body.light .footer-bottom { color: #64748b; border-top: 1px solid rgba(255,255,255,0.08); }
-    body.light .footer-brand-name { color: #fff; }
-    body.light .footer-col-title { color: #fff; }
-    body.light .footer-link { color: #94a3b8; }
-    body.light .footer-copy { color: #64748b; }
-
-    /* CHAT */
-    body.light #chat-box { background: #fff; border-color: rgba(0,0,0,0.1); }
-    body.light .chat-head { background: #0A192F; }
-    body.light .chat-head-name { color: #fff; }
-    body.light .chat-head-status { color: #94a3b8; }
-    body.light .msg-bubble.bot { background: #e8edf3; color: #1e293b; }
-    body.light .msg-bubble.user { background: #0A192F; color: #fff; }
-    body.light #chat-input { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.1); }
-    body.light #chat-input::placeholder { color: #94a3b8; }
-
-    /* MODAL */
-    body.light .modal-box { background: #fff; }
-    body.light .modal-title { color: #0A192F; }
-    body.light .modal-sub { color: #475569; }
-    body.light .form-label { color: #334155; }
-    body.light .form-input { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.12); }
-    body.light .form-input::placeholder { color: #94a3b8; }
-    body.light .success-title { color: #0A192F; }
-    body.light .success-sub { color: #475569; }
-
-    /* HARDWARE CARDS */
+    body.light .carousel-btn { background: rgba(0,0,0,0.06); color: #334155; border-color: rgba(0,0,0,0.1); }
+    body.light .carousel-btn:hover { background: #0A192F; color: #fff; }
+    body.light #อุปกรณ์อัจฉริยะ { background: #f8fafc; }
     body.light .hw-card { background: #fff; border-color: rgba(0,0,0,0.08); }
     body.light .hw-title { color: #0A192F; }
     body.light .hw-desc { color: #475569; }
-    body.light .hw-icon { background: rgba(0,0,0,0.04); color: #334155; }
-
-    /* SOFTWARE */
     body.light #ระบบซอฟต์แวร์ { background: #f8fafc; }
     body.light .sw-title { color: #0A192F; }
     body.light .sw-feat { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
-    body.light .sw-feat:hover { background: rgba(0,0,0,0.06); }
     body.light .sw-feat-title { color: #0A192F; }
     body.light .sw-feat-desc { color: #475569; }
-    body.light .sw-mockup { background: #fff; border-color: rgba(0,0,0,0.08); box-shadow: 0 25px 60px rgba(0,0,0,0.08); }
-    body.light .sw-mock-bar { background: rgba(0,0,0,0.06); }
-    body.light .sw-mock-card { background: rgba(0,0,0,0.04); }
+    body.light .sw-mockup { background: #fff; border-color: rgba(0,0,0,0.08); }
     body.light .sw-app-section { background: #fff; border-color: rgba(0,0,0,0.08); }
     body.light .sw-app-title { color: #0A192F; }
-    body.light .sw-app-desc { color: #475569; }
     body.light .sw-app-item-title { color: #0A192F; }
-    body.light .sw-app-item-desc { color: #64748b; }
-    body.light .sw-app-item:hover { background: rgba(0,0,0,0.03); }
-
-    /* SERVICE CARD */
-    body.light #ติดต่อเรา { background: linear-gradient(to bottom, #e8edf3, #f0f4f8); }
-    body.light .svc-card { background: #fff; border-color: rgba(0,0,0,0.08); box-shadow: 0 25px 60px rgba(0,0,0,0.08); }
+    body.light #ติดต่อเรา { background: linear-gradient(to bottom,#e8edf3,#f0f4f8); }
+    body.light .svc-card { background: #fff; border-color: rgba(0,0,0,0.08); }
     body.light .svc-title { color: #0A192F; }
-    body.light .svc-desc { color: #475569; }
     body.light .svc-stat-num { color: #0A192F; }
-    body.light .svc-stat-label { color: #64748b; }
     body.light .btn-svc { background: #0A192F; color: #fff; }
+    body.light footer { background: #1e293b; }
+    body.light .footer-brand-name { color: #fff; }
+    body.light .footer-col-title { color: #fff; }
+    body.light .footer-inner { color: #94a3b8; }
+    body.light .footer-bottom { color: #64748b; border-top: 1px solid rgba(255,255,255,0.08); }
+    body.light #chat-box { background: #fff; border-color: rgba(0,0,0,0.1); }
+    body.light .chat-head { background: #0A192F; }
+    body.light .msg-bubble.bot { background: #e8edf3; color: #1e293b; }
+    body.light .msg-bubble.user { background: #0A192F; }
+    body.light #chat-input { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.1); }
+    body.light .modal-box { background: #fff; }
+    body.light .modal-title { color: #0A192F; }
+    body.light .form-input, body.light .form-textarea { background: #f0f4f8; color: #1e293b; border-color: rgba(0,0,0,0.12); }
+    body.light .nav-manage-btn { color: #0369a1; border-color: rgba(3,105,161,0.35); background: rgba(3,105,161,0.07); }
+    body.light .nav-manage-btn:hover { background: rgba(3,105,161,0.15); border-color: #0369a1; color: #0A192F; }
+    body.light #back-to-top { background: #0A192F; color: #fff; }
 
-    /* PACKAGES SECTION */
-    body.light #แพ็กเกจ { background: #f0f4f8; border-color: rgba(0,0,0,0.06); }
-    body.light .pkg-overflow { box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04); background: #fff; border: none; }
-    body.light .pkg-card { background: #fff; border-color: transparent; box-shadow: none; }
-    body.light .pkg-tag { color: #64748b; }
-    body.light .pkg-name { color: #0A192F; }
-    body.light .pkg-price { color: #0A192F; }
-    body.light .pkg-price-label { color: #64748b; }
-    body.light .pkg-feature { color: #475569; }
-    body.light .carousel-btn { background: rgba(0,0,0,0.06); color: #334155; border-color: rgba(0,0,0,0.1); }
-    body.light .carousel-btn:hover { background: #0A192F; color: #fff; }
-
-    /* HARDWARE SECTION */
-    body.light #อุปกรณ์อัจฉริยะ { background: #f8fafc; }
-
-    /* ===== THEME TOGGLE BUTTON ===== */
-    #theme-toggle {
-      background: var(--white-5);
-      border: 1px solid var(--white-10);
-      color: var(--slate-300);
-      width: 2.25rem; height: 2.25rem;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      flex-shrink: 0;
+    /* MANAGEMENT MENU BUTTON */
+    .nav-manage-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.875rem; font-weight: 600; color: var(--blue-400);
+      text-decoration: none; padding: 0.35rem 0.85rem; border-radius: 0.5rem;
+      border: 1px solid rgba(56,189,248,0.3); background: rgba(56,189,248,0.07);
+      transition: all 0.2s; white-space: nowrap;
     }
+    .nav-manage-btn:hover { background: rgba(56,189,248,0.18); border-color: var(--blue-400); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(56,189,248,0.2); }
+
+    /* THEME TOGGLE */
+    #theme-toggle { background: var(--white-5); border: 1px solid var(--white-10); color: var(--slate-300); width: 2.25rem; height: 2.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; flex-shrink: 0; }
     #theme-toggle:hover { background: var(--white-10); color: #fff; transform: rotate(20deg); }
 
-    /* ===== BACK TO TOP ===== */
-    #back-to-top {
-      position: fixed; bottom: 2rem; right: 2rem;
-      z-index: 60;
-      background: var(--slate-200); color: var(--bg-deep);
-      width: 3rem; height: 3rem;
-      border-radius: 50%;
-      border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      opacity: 0; transform: translateY(1rem);
-      transition: all 0.3s;
-      pointer-events: none;
-    }
+    /* BACK TO TOP */
+    #back-to-top { position: fixed; bottom: 6rem; right: 2rem; z-index: 60; background: var(--slate-200); color: var(--bg-deep); width: 3rem; height: 3rem; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.4); opacity: 0; transform: translateY(1rem); transition: all 0.3s; pointer-events: none; }
     #back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    #back-to-top:hover { transform: translateY(-4px); background: #fff; }
-    body.light #back-to-top { background: #0A192F; color: #fff; }
+    #back-to-top:hover { transform: translateY(-4px); }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg-deep);
-      color: var(--slate-200);
-      font-family: 'IBM Plex Sans Thai', sans-serif;
-      overflow-x: hidden;
-    }
+    body { background: var(--bg-deep); color: var(--slate-200); font-family: 'IBM Plex Sans Thai', sans-serif; overflow-x: hidden; }
     ::selection { background: var(--slate-400); color: #fff; }
-
-    /* ===== SCROLLBAR ===== */
     .custom-scrollbar::-webkit-scrollbar { width: 4px; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 
-    /* ===== ANIMATIONS ===== */
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
     @keyframes bounce-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
     @keyframes spin { to{transform:rotate(360deg)} }
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(3rem)} to{opacity:1;transform:translateY(0)} }
-    @keyframes zoomIn { from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
     .animate-pulse { animation: pulse 2s ease-in-out infinite; }
     .animate-bounce-slow { animation: bounce-slow 4s ease-in-out infinite; }
     .animate-bounce { animation: bounce 1s ease-in-out infinite; }
     .animate-spin { animation: spin 1s linear infinite; }
-
-    /* ===== REVEAL ===== */
     .reveal { opacity: 0; transform: translateY(3rem); transition: opacity 1s ease-out, transform 1s ease-out; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== BRAND LOGO ===== */
-    .brand-logo { display: inline-block; }
-
-    /* ===== NAVIGATION ===== */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 50;
-      transition: all 0.5s; padding: 1.5rem 0;
-    }
-    nav.scrolled {
-      background: rgba(10,25,47,0.95); backdrop-filter: blur(12px);
-      padding: 1rem 0; box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-      border-bottom: 1px solid var(--border-light);
-    }
+    nav { position: fixed; top: 0; width: 100%; z-index: 50; transition: all 0.5s; padding: 1.5rem 0; }
+    nav.scrolled { background: rgba(10,25,47,0.95); backdrop-filter: blur(12px); padding: 1rem 0; box-shadow: 0 4px 30px rgba(0,0,0,0.4); border-bottom: 1px solid var(--border-light); }
     .nav-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
     .nav-brand { display: flex; align-items: center; gap: 0.5rem; }
-    .nav-brand-text { display: flex; flex-direction: column; text-align: left; }
+    .nav-brand-text { display: flex; flex-direction: column; }
     .nav-brand-title { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -0.02em; }
     .nav-brand-sub { font-size: 0.625rem; color: var(--slate-400); font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a {
-      font-size: 0.875rem; font-weight: 500; color: var(--slate-300);
-      text-decoration: none; position: relative; transition: color 0.2s;
-    }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--slate-300); text-decoration: none; position: relative; transition: color 0.2s; white-space: nowrap; }
     .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--slate-400); transition:width 0.3s; }
     .nav-links a:hover { color: #fff; }
     .nav-links a:hover::after { width: 100%; }
-    .btn-quote {
-      background: var(--slate-200); color: var(--bg-deep);
-      padding: 0.5rem 1.5rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700;
-      border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    }
+    .btn-quote { background: var(--slate-200); color: var(--bg-deep); padding: 0.5rem 1.5rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.3); font-family: inherit; white-space: nowrap; }
     .btn-quote:hover { background: #fff; transform: scale(1.05); }
-    .btn-quote:active { transform: scale(0.97); }
     .hamburger { display: none; background: none; border: none; color: #fff; cursor: pointer; }
     .mobile-menu { display: none; flex-direction: column; gap: 1rem; padding: 1.5rem; background: var(--bg-card); border-top: 1px solid var(--white-10); }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { color: var(--slate-300); text-decoration: none; font-size: 1rem; font-weight: 500; }
 
-    /* ===== SIDEBAR ===== */
-    #sidebar {
-      position: fixed; top: 0; left: 0; height: 100%; width: 350px;
-      background: var(--bg-deep); border-right: 1px solid var(--white-10);
-      z-index: 70; transition: transform 0.5s; transform: translateX(-100%);
-      display: flex; flex-direction: column; box-shadow: 10px 0 40px rgba(0,0,0,0.5);
-    }
+    #sidebar { position: fixed; top: 0; left: 0; height: 100%; width: 350px; background: var(--bg-deep); border-right: 1px solid var(--white-10); z-index: 70; transition: transform 0.5s; transform: translateX(-100%); display: flex; flex-direction: column; box-shadow: 10px 0 40px rgba(0,0,0,0.5); }
     #sidebar.open { transform: translateX(0); }
-    .sidebar-head {
-      padding: 1.5rem; border-bottom: 1px solid var(--white-10);
-      background: var(--bg-card); display: flex; justify-content: space-between; align-items: center;
-    }
+    .sidebar-head { padding: 1.5rem; border-bottom: 1px solid var(--white-10); background: var(--bg-card); display: flex; justify-content: space-between; align-items: center; }
     .sidebar-head-title { display: flex; align-items: center; gap: 0.75rem; }
     .sidebar-head-title h2 { font-size: 1.25rem; font-weight: 700; color: #fff; text-transform: uppercase; }
     .sidebar-body { flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .sidebar-pkg {
-      padding: 1.25rem; border-radius: 1rem;
-      border: 1px solid var(--white-5); background: var(--white-5);
-      transition: background 0.2s;
-    }
-    .sidebar-pkg:hover { background: rgba(255,255,255,0.05); }
+    .sidebar-pkg { padding: 1.25rem; border-radius: 1rem; border: 1px solid var(--white-5); background: var(--white-5); }
     .sidebar-pkg-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
     .sidebar-pkg-tag { font-size: 0.625rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.2em; }
     .sidebar-pkg-name { font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.2; }
@@ -331,380 +162,210 @@
     .sidebar-pkg-price span { font-size: 0.75rem; font-weight: 400; }
     .sidebar-pkg ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
     .sidebar-pkg li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6875rem; color: var(--slate-400); font-weight: 300; }
-    .sidebar-pkg li svg { color: var(--slate-600); flex-shrink: 0; }
-
-    /* ===== COMPARE TRIGGER BUTTON ===== */
-    #sidebar-trigger {
-      position: fixed; left: 0; top: 50%; transform: translateY(-50%);
-      z-index: 55; background: var(--slate-200); color: var(--bg-deep);
-      padding: 0.75rem; border-radius: 0 1rem 1rem 0;
-      border: none; cursor: pointer;
-      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      box-shadow: 4px 0 20px rgba(0,0,0,0.4);
-      transition: all 0.4s; font-family: inherit;
-    }
+    #sidebar-trigger { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 55; background: var(--slate-200); color: var(--bg-deep); padding: 0.75rem; border-radius: 0 1rem 1rem 0; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; box-shadow: 4px 0 20px rgba(0,0,0,0.4); transition: all 0.4s; font-family: inherit; }
     #sidebar-trigger:hover { padding-left: 1.5rem; }
-    #sidebar-trigger span {
-      writing-mode: vertical-lr; font-weight: 700; font-size: 0.625rem;
-      text-transform: uppercase; letter-spacing: 0.2em; padding: 0.5rem 0;
-    }
+    #sidebar-trigger span { writing-mode: vertical-lr; font-weight: 700; font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.2em; padding: 0.5rem 0; }
     #sidebar-trigger.hidden { transform: translateY(-50%) translateX(-100%); }
 
-    /* ===== HERO ===== */
-    #หน้าแรก {
-      min-height: 100vh; display: flex; align-items: center; padding-top: 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-dots { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(148,163,184,0.15) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; opacity: 0; transition: opacity 0.5s; }
-    body.light .hero-dots { opacity: 1; }
-    .hero-bg { position: absolute; top:0; right:0; width:50%; height:100%; background: linear-gradient(to left, rgba(30,58,138,0.15), transparent); pointer-events:none; }
+    #หน้าแรก { min-height: 100vh; display: flex; align-items: center; padding-top: 5rem; position: relative; overflow: hidden; }
+    .hero-dots { position: absolute; inset: 0; background-image: radial-gradient(circle,rgba(148,163,184,0.15) 1px,transparent 1px); background-size: 32px 32px; pointer-events: none; opacity: 0; transition: opacity 0.5s; }
+    .hero-bg { position: absolute; top:0; right:0; width:50%; height:100%; background: linear-gradient(to left,rgba(30,58,138,0.15),transparent); pointer-events:none; }
     .hero-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; position:relative; z-index:1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.25rem 0.75rem; border-radius: 9999px;
-      background: var(--white-5); border: 1px solid var(--white-10);
-      color: var(--slate-400); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .hero-badge .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--blue-400); }
-    .hero-title { font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -0.03em; margin: 1.5rem 0 1rem; }
-    .hero-title span { background: linear-gradient(to right, var(--slate-200), var(--slate-500)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-sub { font-size: 1.1rem; color: var(--slate-400); font-weight: 300; line-height: 1.7; max-width: 28rem; }
-    .btn-primary {
-      margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;
-      background: linear-gradient(to right, var(--slate-200), var(--slate-400));
-      color: var(--bg-deep); padding: 1rem 2rem; border-radius: 0.75rem;
-      font-weight: 700; font-size: 1rem; border: none; cursor: pointer;
-      transition: all 0.3s; box-shadow: 0 0 0 rgba(255,255,255,0);
-    }
-    .btn-primary:hover { box-shadow: 0 0 20px rgba(255,255,255,0.15); }
-    .btn-primary svg { transition: transform 0.2s; }
-    .btn-primary:hover svg { transform: translateX(4px); }
-    .hero-card {
-      aspect-ratio: 1; background: linear-gradient(135deg, rgba(30,41,59,0.5), var(--bg-deep));
-      border-radius: 1.5rem; border: 1px solid var(--white-10);
-      padding: 2rem; overflow: hidden; position: relative;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    }
-    .hero-lpr-badge {
-      display: flex; align-items: center; gap: 1rem;
-      background: var(--white-5); padding: 1rem; border-radius: 1rem;
-      border: 1px solid var(--white-10); align-self: flex-end; margin-right: 1rem;
-    }
-    .lpr-label { font-size: 0.625rem; color: var(--slate-400); text-transform: uppercase; letter-spacing: 0.2em; line-height: 1; margin-bottom: 2px; }
-    .lpr-plate { font-size: 0.875rem; font-family: 'IBM Plex Mono', monospace; color: #fff; }
-    .hero-bar { width: 16rem; height: 0.5rem; background: linear-gradient(to right, var(--slate-500), transparent); border-radius: 9999px; }
-    .hero-brand-badge {
-      display: flex; align-items: center; gap: 1rem;
-      background: var(--white-5); padding: 1rem; border-radius: 1rem;
-      border: 1px solid var(--white-10); align-self: flex-start; margin-left: 1rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-    .hero-brand-badge span { font-size: 0.75rem; font-family: 'IBM Plex Mono', monospace; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; }
+    .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; padding:0.25rem 0.75rem; border-radius:9999px; background:var(--white-5); border:1px solid var(--white-10); color:var(--slate-400); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; }
+    .hero-badge .dot { width:0.5rem; height:0.5rem; border-radius:50%; background:var(--blue-400); }
+    .hero-title { font-size:clamp(2.5rem,5vw,4.5rem); font-weight:700; color:#fff; line-height:1.1; letter-spacing:-0.03em; margin:1.5rem 0 1rem; }
+    .hero-title span { background:linear-gradient(to right,var(--slate-200),var(--slate-500)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .hero-sub { font-size:1.1rem; color:var(--slate-400); font-weight:300; line-height:1.7; max-width:28rem; }
+    .btn-primary { margin-top:1.5rem; display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(to right,var(--slate-200),var(--slate-400)); color:var(--bg-deep); padding:1rem 2rem; border-radius:0.75rem; font-weight:700; font-size:1rem; border:none; cursor:pointer; transition:all 0.3s; font-family:inherit; }
+    .btn-primary:hover { box-shadow:0 0 20px rgba(255,255,255,0.15); }
+    .btn-primary svg { transition:transform 0.2s; }
+    .btn-primary:hover svg { transform:translateX(4px); }
+    .hero-card { aspect-ratio:1; background:linear-gradient(135deg,rgba(30,41,59,0.5),var(--bg-deep)); border-radius:1.5rem; border:1px solid var(--white-10); padding:2rem; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2rem; box-shadow:0 25px 60px rgba(0,0,0,0.5); }
+    .hero-lpr-badge { display:flex; align-items:center; gap:1rem; background:var(--white-5); padding:1rem; border-radius:1rem; border:1px solid var(--white-10); align-self:flex-end; margin-right:1rem; }
+    .lpr-label { font-size:0.625rem; color:var(--slate-400); text-transform:uppercase; letter-spacing:0.2em; line-height:1; margin-bottom:2px; }
+    .lpr-plate { font-size:0.875rem; font-family:'IBM Plex Mono',monospace; color:#fff; }
+    .hero-bar { width:16rem; height:0.5rem; background:linear-gradient(to right,var(--slate-500),transparent); border-radius:9999px; }
+    .hero-brand-badge { display:flex; align-items:center; gap:1rem; background:var(--white-5); padding:1rem; border-radius:1rem; border:1px solid var(--white-10); align-self:flex-start; margin-left:1rem; box-shadow:0 8px 30px rgba(0,0,0,0.4); }
+    .hero-brand-badge span { font-size:0.75rem; font-family:'IBM Plex Mono',monospace; color:#fff; text-transform:uppercase; letter-spacing:0.1em; }
 
-    /* ===== PACKAGES ===== */
-    #แพ็กเกจ { padding: 6rem 0; background: var(--bg-section); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .section-head { text-align: center; margin-bottom: 4rem; }
-    .section-title { font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1; }
-    .section-line { width: 6rem; height: 4px; background: var(--slate-400); margin: 1rem auto; }
-    .section-sub { color: var(--slate-400); font-weight: 300; }
-    .pkg-carousel { position: relative; padding: 0 3.5rem; }
-    .pkg-overflow { overflow: hidden; border-radius: 2.5rem; }
-    .pkg-track { display: flex; transition: transform 0.7s ease; }
-    .pkg-slide { width: 100%; flex-shrink: 0; padding: 0 0.5rem; }
-    .pkg-card {
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      border-radius: 2.5rem; padding: 3rem; display: flex; gap: 3rem; align-items: center;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.5); position: relative; overflow: hidden;
-    }
-    .pkg-card-left { flex: 1; }
-    .pkg-card-icon-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    .pkg-icon-wrap { width: 4rem; height: 4rem; border-radius: 1rem; background: var(--white-5); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; }
-    .pkg-tag { font-size: 0.75rem; font-weight: 700; color: var(--blue-400); text-transform: uppercase; letter-spacing: 0.2em; }
-    .pkg-name { font-size: clamp(1.5rem,3vw,2.5rem); font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1; }
-    .pkg-price-row { padding: 1.5rem 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin-bottom: 1.5rem; }
-    .pkg-price-label { font-size: 0.875rem; color: var(--slate-500); margin-bottom: 0.25rem; }
-    .pkg-price { font-size: clamp(2.5rem,5vw,3.75rem); font-weight: 700; color: #fff; letter-spacing: -0.04em; line-height: 1; }
-    .pkg-price span { font-size: 1rem; font-weight: 400; color: var(--slate-500); margin-left: 0.5rem; }
-    .pkg-items { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
-    .pkg-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; color: var(--slate-300); font-weight: 300; }
-    .pkg-item svg { color: var(--slate-500); flex-shrink: 0; }
-    .btn-pkg {
-      background: var(--slate-200); color: var(--bg-deep);
-      padding: 0.75rem 2rem; border-radius: 0.75rem; font-weight: 700;
-      border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-    .btn-pkg:hover { background: #fff; }
-    .pkg-card-watermark { width: 33%; aspect-ratio: 1; background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); border-radius: 1.5rem; border: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0.2; flex-shrink: 0; }
-    .carousel-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 3.5rem; height: 3.5rem; border-radius: 50%;
-      background: var(--bg-card); border: 1px solid var(--white-10);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; cursor: pointer; transition: all 0.2s; z-index: 20;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-    .carousel-btn:hover { background: #fff; color: var(--bg-deep); }
-    #prev-pkg { left: -1.75rem; }
-    #next-pkg { right: -1.75rem; }
-    .pkg-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
-    .pkg-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--slate-600); border: none; cursor: pointer; transition: all 0.3s; padding: 0; }
-    .pkg-dot.active { background: var(--slate-200); width: 1.5rem; border-radius: 9999px; }
+    #แพ็กเกจ { padding:6rem 0; background:var(--bg-section); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light); }
+    .section-head { text-align:center; margin-bottom:4rem; }
+    .section-title { font-size:clamp(1.75rem,4vw,3rem); font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:-0.02em; line-height:1; }
+    .section-line { width:6rem; height:4px; background:var(--slate-400); margin:1rem auto; }
+    .section-sub { color:var(--slate-400); font-weight:300; }
+    .pkg-carousel { position:relative; padding:0 3.5rem; }
+    .pkg-overflow { overflow:hidden; border-radius:2.5rem; }
+    .pkg-track { display:flex; transition:transform 0.7s ease; }
+    .pkg-slide { width:100%; flex-shrink:0; padding:0 0.5rem; }
+    .pkg-card { background:var(--bg-card); border:1px solid var(--white-10); border-radius:2.5rem; padding:3rem; display:flex; gap:3rem; align-items:center; box-shadow:0 25px 60px rgba(0,0,0,0.5); position:relative; overflow:hidden; }
+    .pkg-card-left { flex:1; }
+    .pkg-card-icon-row { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+    .pkg-icon-wrap { width:4rem; height:4rem; border-radius:1rem; background:var(--white-5); display:flex; align-items:center; justify-content:center; }
+    .pkg-tag { font-size:0.75rem; font-weight:700; color:var(--blue-400); text-transform:uppercase; letter-spacing:0.2em; }
+    .pkg-name { font-size:clamp(1.5rem,3vw,2.5rem); font-weight:700; color:#fff; letter-spacing:-0.02em; line-height:1; }
+    .pkg-price-row { padding:1.5rem 0; border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light); margin-bottom:1.5rem; }
+    .pkg-price-label { font-size:0.875rem; color:var(--slate-500); margin-bottom:0.25rem; }
+    .pkg-price { font-size:clamp(2.5rem,5vw,3.75rem); font-weight:700; color:#fff; letter-spacing:-0.04em; line-height:1; }
+    .pkg-price span { font-size:1rem; font-weight:400; color:var(--slate-500); margin-left:0.5rem; }
+    .pkg-items { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1.5rem; }
+    .pkg-item { display:flex; align-items:center; gap:0.75rem; font-size:0.875rem; color:var(--slate-300); font-weight:300; }
+    .pkg-item svg { color:var(--slate-500); flex-shrink:0; }
+    .btn-pkg { background:var(--slate-200); color:var(--bg-deep); padding:0.75rem 2rem; border-radius:0.75rem; font-weight:700; border:none; cursor:pointer; transition:all 0.2s; font-family:inherit; }
+    .btn-pkg:hover { background:#fff; }
+    .pkg-card-watermark { width:33%; aspect-ratio:1; background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent); border-radius:1.5rem; border:1px solid var(--border-light); display:flex; align-items:center; justify-content:center; padding:2rem; opacity:0.2; flex-shrink:0; }
+    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); width:3.5rem; height:3.5rem; border-radius:50%; background:var(--bg-card); border:1px solid var(--white-10); display:flex; align-items:center; justify-content:center; color:#fff; cursor:pointer; transition:all 0.2s; z-index:20; box-shadow:0 8px 30px rgba(0,0,0,0.5); }
+    .carousel-btn:hover { background:#fff; color:var(--bg-deep); }
+    #prev-pkg { left:-1.75rem; }
+    #next-pkg { right:-1.75rem; }
+    .pkg-dots { display:flex; justify-content:center; gap:0.5rem; margin-top:2rem; }
+    .pkg-dot { width:0.5rem; height:0.5rem; border-radius:50%; background:var(--slate-600); border:none; cursor:pointer; transition:all 0.3s; padding:0; }
+    .pkg-dot.active { background:var(--slate-200); width:1.5rem; border-radius:9999px; }
 
-    /* ===== HARDWARE ===== */
-    #อุปกรณ์อัจฉริยะ { padding: 6rem 0; background: var(--bg-card); }
-    .hw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-    .hw-card {
-      padding: 2rem; border-radius: 1.5rem; background: var(--bg-deep);
-      border: 1px solid var(--border-light); text-align: left;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .hw-card:hover { border-color: var(--slate-500); transform: translateY(-0.5rem); }
-    .hw-icon { width: 4rem; height: 4rem; border-radius: 1rem; background: var(--white-5); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--slate-300); }
-    .hw-title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1; }
-    .hw-desc { color: var(--slate-400); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
+    #อุปกรณ์อัจฉริยะ { padding:6rem 0; background:var(--bg-card); }
+    .hw-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; }
+    .hw-card { padding:2rem; border-radius:1.5rem; background:var(--bg-deep); border:1px solid var(--border-light); text-align:left; transition:border-color 0.3s,transform 0.3s; }
+    .hw-card:hover { border-color:var(--slate-500); transform:translateY(-0.5rem); }
+    .hw-icon { width:4rem; height:4rem; border-radius:1rem; background:var(--white-5); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:var(--slate-300); }
+    .hw-title { font-size:1.25rem; font-weight:700; color:#fff; margin-bottom:1rem; line-height:1; }
+    .hw-desc { color:var(--slate-400); font-size:0.875rem; line-height:1.7; font-weight:300; }
 
-    /* ===== SOFTWARE ===== */
-    #ระบบซอฟต์แวร์ { padding: 6rem 0; }
-    .sw-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
-    .sw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
-    .sw-badge {
-      display: inline-flex; align-items: center;
-      padding: 0.5rem 1rem; border-radius: 0.5rem;
-      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2);
-      color: var(--blue-400); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em;
-    }
-    .sw-title { font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin: 1rem 0 1.5rem; }
-    .sw-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .sw-feat {
-      padding: 1rem; border-radius: 1rem;
-      background: var(--white-5); border: 1px solid var(--white-10);
-      transition: background 0.2s;
-    }
-    .sw-feat:hover { background: rgba(255,255,255,0.08); }
-    .sw-feat-title { font-size: 0.875rem; font-weight: 700; color: #fff; margin: 0.5rem 0 0.25rem; line-height: 1; }
-    .sw-feat-desc { font-size: 0.75rem; color: var(--slate-500); font-weight: 300; }
-    .sw-mockup {
-      border-radius: 1.5rem; border: 1px solid var(--white-10);
-      overflow: hidden; background: rgba(31,41,55,0.5); padding: 2rem;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-    }
-    .sw-mock-topbar { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-light); margin-bottom: 2rem; }
-    .sw-mock-label { font-size: 0.75rem; font-weight: 700; color: var(--slate-500); letter-spacing: 0.2em; text-transform: uppercase; }
-    .sw-mock-dots { display: flex; gap: 0.25rem; }
-    .dot-red { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #ef4444; }
-    .dot-yellow { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #eab308; }
-    .dot-green { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: #22c55e; }
-    .sw-mock-bar { height: 1rem; background: var(--white-5); border-radius: 4px; width: 50%; margin-bottom: 1rem; }
-    .sw-mock-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
-    .sw-mock-card { height: 4rem; background: var(--white-5); border-radius: 0.75rem; }
-    .sw-mock-chart { height: 8rem; background: linear-gradient(to top, rgba(56,189,248,0.1), transparent); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; }
-    .sw-app-section {
-      display: grid; grid-template-columns: 5fr 7fr; gap: 3rem; align-items: center;
-      background: rgba(17,24,39,0.5); padding: 3rem; border-radius: 2.5rem; border: 1px solid var(--border-light);
-    }
-    .sw-app-title { font-size: 1.75rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
-    .sw-app-desc { color: var(--slate-400); font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem; }
-    .sw-app-items { display: flex; flex-direction: column; gap: 1rem; }
-    .sw-app-item { display: flex; align-items: flex-start; gap: 1rem; padding: 0.5rem; border-radius: 0.75rem; transition: background 0.2s; }
-    .sw-app-item:hover { background: var(--white-5); }
-    .sw-app-icon { background: rgba(59,130,246,0.1); padding: 0.75rem; border-radius: 0.75rem; color: var(--blue-400); transition: background 0.2s; }
-    .sw-app-item:hover .sw-app-icon { background: rgba(59,130,246,0.2); }
-    .sw-app-item-title { font-size: 0.875rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 0.25rem; }
-    .sw-app-item-desc { font-size: 0.75rem; color: var(--slate-500); font-weight: 300; }
-    .sw-phone-mock { aspect-ratio: 16/9; background: #1e293b; border-radius: 1.5rem; border: 1px solid var(--white-10); display: flex; align-items: center; justify-content: center; opacity: 0.4; }
+    #ระบบซอฟต์แวร์ { padding:6rem 0; }
+    .sw-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; }
+    .sw-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-bottom:6rem; }
+    .sw-badge { display:inline-flex; align-items:center; padding:0.5rem 1rem; border-radius:0.5rem; background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.2); color:var(--blue-400); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; }
+    .sw-title { font-size:clamp(2rem,4vw,3rem); font-weight:700; color:#fff; line-height:1.2; letter-spacing:-0.02em; margin:1rem 0 1.5rem; }
+    .sw-features { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .sw-feat { padding:1rem; border-radius:1rem; background:var(--white-5); border:1px solid var(--white-10); transition:background 0.2s; }
+    .sw-feat:hover { background:rgba(255,255,255,0.08); }
+    .sw-feat-title { font-size:0.875rem; font-weight:700; color:#fff; margin:0.5rem 0 0.25rem; line-height:1; }
+    .sw-feat-desc { font-size:0.75rem; color:var(--slate-500); font-weight:300; }
+    .sw-mockup { border-radius:1.5rem; border:1px solid var(--white-10); overflow:hidden; background:rgba(31,41,55,0.5); padding:2rem; box-shadow:0 25px 60px rgba(0,0,0,0.4); }
+    .sw-mock-topbar { display:flex; justify-content:space-between; align-items:center; padding-bottom:1.5rem; border-bottom:1px solid var(--border-light); margin-bottom:2rem; }
+    .sw-mock-label { font-size:0.75rem; font-weight:700; color:var(--slate-500); letter-spacing:0.2em; text-transform:uppercase; }
+    .sw-mock-dots { display:flex; gap:0.25rem; }
+    .dot-red { width:0.5rem; height:0.5rem; border-radius:50%; background:#ef4444; }
+    .dot-yellow { width:0.5rem; height:0.5rem; border-radius:50%; background:#eab308; }
+    .dot-green { width:0.5rem; height:0.5rem; border-radius:50%; background:#22c55e; }
+    .sw-mock-bar { height:1rem; background:var(--white-5); border-radius:4px; width:50%; margin-bottom:1rem; }
+    .sw-mock-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; margin-bottom:1rem; }
+    .sw-mock-card { height:4rem; background:var(--white-5); border-radius:0.75rem; }
+    .sw-mock-chart { height:8rem; background:linear-gradient(to top,rgba(56,189,248,0.1),transparent); border-radius:0.75rem; display:flex; align-items:center; justify-content:center; }
+    .sw-app-section { display:grid; grid-template-columns:5fr 7fr; gap:3rem; align-items:center; background:rgba(17,24,39,0.5); padding:3rem; border-radius:2.5rem; border:1px solid var(--border-light); }
+    .sw-app-title { font-size:1.75rem; font-weight:700; color:#fff; letter-spacing:-0.01em; margin-bottom:0.75rem; }
+    .sw-app-desc { color:var(--slate-400); font-weight:300; line-height:1.7; margin-bottom:1.5rem; }
+    .sw-app-items { display:flex; flex-direction:column; gap:1rem; }
+    .sw-app-item { display:flex; align-items:flex-start; gap:1rem; padding:0.5rem; border-radius:0.75rem; transition:background 0.2s; }
+    .sw-app-item:hover { background:var(--white-5); }
+    .sw-app-icon { background:rgba(59,130,246,0.1); padding:0.75rem; border-radius:0.75rem; color:var(--blue-400); }
+    .sw-app-item:hover .sw-app-icon { background:rgba(59,130,246,0.2); }
+    .sw-app-item-title { font-size:0.875rem; font-weight:700; color:#fff; line-height:1; margin-bottom:0.25rem; }
+    .sw-app-item-desc { font-size:0.75rem; color:var(--slate-500); font-weight:300; }
+    .sw-phone-mock { aspect-ratio:16/9; background:#1e293b; border-radius:1.5rem; border:1px solid var(--white-10); display:flex; align-items:center; justify-content:center; opacity:0.4; }
 
-    /* ===== SERVICES ===== */
-    #ติดต่อเรา { padding: 6rem 0; background: linear-gradient(to bottom, var(--bg-card), var(--bg-deep)); }
-    .svc-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
-    .svc-card {
-      background: #0f172a; border-radius: 2.5rem; padding: 4rem;
-      border: 1px solid var(--border-light); display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 3rem;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-    }
-    .svc-title { font-size: 1.875rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .svc-desc { color: var(--slate-400); line-height: 1.7; font-weight: 300; max-width: 32rem; margin-bottom: 1.5rem; }
-    .svc-stats { display: flex; gap: 3rem; }
-    .svc-stat-num { font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1; }
-    .svc-stat-label { font-size: 0.625rem; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-top: 0.25rem; }
-    .btn-svc {
-      background: #fff; color: var(--bg-deep); padding: 1.25rem 2.5rem;
-      border-radius: 1rem; font-weight: 700; font-size: 1.1rem;
-      border: none; cursor: pointer; transition: all 0.2s;
-      display: flex; align-items: center; gap: 0.75rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    }
-    .btn-svc:hover { background: var(--slate-200); }
+    #ติดต่อเรา { padding:6rem 0; background:linear-gradient(to bottom,var(--bg-card),var(--bg-deep)); }
+    .svc-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; }
+    .svc-card { background:#0f172a; border-radius:2.5rem; padding:4rem; border:1px solid var(--border-light); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:3rem; box-shadow:0 25px 60px rgba(0,0,0,0.4); }
+    .svc-title { font-size:1.875rem; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:1rem; }
+    .svc-desc { color:var(--slate-400); line-height:1.7; font-weight:300; max-width:32rem; margin-bottom:1.5rem; }
+    .svc-stats { display:flex; gap:3rem; }
+    .svc-stat-num { font-size:1.5rem; font-weight:700; color:#fff; letter-spacing:-0.03em; line-height:1; }
+    .svc-stat-label { font-size:0.625rem; color:var(--slate-500); text-transform:uppercase; letter-spacing:0.2em; font-weight:700; margin-top:0.25rem; }
+    .btn-svc { background:#fff; color:var(--bg-deep); padding:1.25rem 2.5rem; border-radius:1rem; font-weight:700; font-size:1.1rem; border:none; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:0.75rem; box-shadow:0 10px 40px rgba(0,0,0,0.4); font-family:inherit; }
+    .btn-svc:hover { background:var(--slate-200); }
 
-    /* ===== FOOTER ===== */
-    footer { padding: 5rem 0; border-top: 1px solid var(--border-light); background: var(--bg-deep); }
-    .footer-inner { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; color: var(--slate-400); font-size: 0.875rem; }
-    .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-    .footer-brand-name { font-size: 1.1rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; }
-    .footer-desc { font-weight: 300; max-width: 20rem; line-height: 1.7; }
-    .footer-col-title { color: #fff; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; }
-    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; line-height: 1.6; }
-    .footer-contact-item svg { color: var(--blue-400); flex-shrink: 0; margin-top: 2px; }
-    .footer-social { display: flex; gap: 1rem; }
-    .social-btn {
-      width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--white-10);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: background 0.2s;
-      font-size: 0.625rem; font-weight: 700; color: var(--slate-400);
-    }
-    .social-btn:hover { background: var(--white-10); color: #fff; }
-    .footer-bottom { max-width: 80rem; margin: 3rem auto 0; padding: 2rem 1.5rem 0; border-top: 1px solid var(--border-light); text-align: center; color: var(--slate-600); font-size: 0.625rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.2em; }
+    footer { padding:5rem 0; border-top:1px solid var(--border-light); background:var(--bg-deep); }
+    .footer-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; color:var(--slate-400); font-size:0.875rem; }
+    .footer-brand { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
+    .footer-brand-name { font-size:1.1rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.05em; }
+    .footer-desc { font-weight:300; max-width:20rem; line-height:1.7; }
+    .footer-col-title { color:#fff; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; margin-bottom:1rem; }
+    .footer-contact-item { display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:0.75rem; line-height:1.6; }
+    .footer-contact-item svg { color:var(--blue-400); flex-shrink:0; margin-top:2px; }
+    .footer-social { display:flex; gap:1rem; }
+    .social-btn { width:2.5rem; height:2.5rem; border-radius:50%; border:1px solid var(--white-10); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background 0.2s; font-size:0.625rem; font-weight:700; color:var(--slate-400); background:none; }
+    .social-btn:hover { background:var(--white-10); color:#fff; }
+    .footer-bottom { max-width:80rem; margin:3rem auto 0; padding:2rem 1.5rem 0; border-top:1px solid var(--border-light); text-align:center; color:var(--slate-600); font-size:0.625rem; text-transform:uppercase; font-weight:700; letter-spacing:0.2em; }
 
-    /* ===== CHAT ===== */
-    #chat-wrap { position: fixed; bottom: 2rem; right: 2rem; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
-    #chat-box {
-      width: 380px; height: 500px; background: var(--bg-card);
-      border: 1px solid var(--white-10); border-radius: 1.5rem;
-      display: flex; flex-direction: column; overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-      transform-origin: bottom right;
-      transition: opacity 0.4s, transform 0.4s;
-      opacity: 0; transform: scale(0.9) translateY(3rem); pointer-events: none;
-    }
-    #chat-box.open { opacity: 1; transform: scale(1) translateY(0); pointer-events: all; }
-    .chat-head {
-      padding: 1.25rem; background: linear-gradient(to right, var(--slate-800), var(--bg-deep));
-      border-bottom: 1px solid var(--border-light); display: flex; justify-content: space-between; align-items: center;
-    }
-    .chat-head-info { display: flex; align-items: center; gap: 0.75rem; }
-    .chat-head-avatar { width: 2.5rem; height: 2.5rem; background: var(--white-5); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(56,189,248,0.3); }
-    .chat-head-name { font-size: 0.875rem; font-weight: 700; color: #fff; line-height: 1; }
-    .chat-head-status { display: flex; align-items: center; gap: 0.375rem; font-size: 0.625rem; color: var(--blue-400); margin-top: 0.25rem; }
-    .chat-head-status .dot { width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--blue-400); }
-    .chat-close-btn { background: none; border: none; color: var(--slate-400); cursor: pointer; transition: color 0.2s; }
-    .chat-close-btn:hover { color: #fff; }
-    .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; background-size: auto; }
-    .msg-row { display: flex; }
-    .msg-row.user { justify-content: flex-end; }
-    .msg-row.bot { justify-content: flex-start; }
-    .msg-bubble {
-      max-width: 85%; padding: 0.875rem 1rem;
-      border-radius: 1rem; font-size: 0.875rem; line-height: 1.6;
-    }
-    .msg-bubble.user { background: #2563eb; color: #fff; border-top-right-radius: 0.25rem; box-shadow: 0 4px 15px rgba(37,99,235,0.4); }
-    .msg-bubble.bot { background: var(--white-5); color: var(--slate-200); border: 1px solid var(--border-light); border-top-left-radius: 0.25rem; }
-    .typing-bubble { background: var(--white-5); padding: 0.875rem 1rem; border-radius: 1rem; border: 1px solid var(--border-light); border-top-left-radius: 0.25rem; display: flex; gap: 0.375rem; align-items: center; }
-    .typing-dot { width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--blue-400); }
-    .typing-dot:nth-child(2) { animation-delay: 0.1s; }
-    .typing-dot:nth-child(3) { animation-delay: 0.2s; }
-    .chat-form { padding: 1rem; border-top: 1px solid var(--border-light); background: rgba(10,25,47,0.5); }
-    .chat-input-wrap { position: relative; display: flex; align-items: center; }
-    .chat-input {
-      width: 100%; background: var(--white-5); border: 1px solid var(--white-10);
-      border-radius: 9999px; padding: 0.75rem 3.5rem 0.75rem 1.25rem;
-      font-size: 0.875rem; color: #fff; outline: none; transition: border-color 0.2s;
-      font-family: inherit;
-    }
-    .chat-input:focus { border-color: var(--blue-400); }
-    .chat-input::placeholder { color: var(--slate-600); }
-    .chat-send-btn {
-      position: absolute; right: 0.375rem; width: 2.5rem; height: 2.5rem;
-      background: var(--slate-200); color: var(--bg-deep); border-radius: 50%;
-      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s; flex-shrink: 0;
-    }
-    .chat-send-btn:hover { background: #fff; }
-    .chat-send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    #chat-toggle-btn {
-      width: 4rem; height: 4rem; border-radius: 50%;
-      background: linear-gradient(135deg, var(--slate-200), var(--slate-400));
-      color: var(--bg-deep); border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-      transition: transform 0.3s; position: relative;
-    }
-    #chat-toggle-btn:hover { transform: scale(1.1); }
-    #chat-toggle-btn .chat-tooltip {
-      position: absolute; bottom: calc(100% + 0.75rem); right: 0;
-      background: #fff; color: var(--bg-deep); padding: 0.5rem 1rem;
-      border-radius: 0.75rem; font-size: 0.6875rem; font-weight: 700;
-      white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      opacity: 0; transform: translateY(0.5rem); transition: all 0.2s; pointer-events: none;
-    }
+    #chat-wrap { position:fixed; bottom:2rem; right:2rem; z-index:90; display:flex; flex-direction:column; align-items:flex-end; gap:1rem; }
+    #chat-box { width:380px; height:500px; background:var(--bg-card); border:1px solid var(--white-10); border-radius:1.5rem; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 25px 60px rgba(0,0,0,0.6); transform-origin:bottom right; transition:opacity 0.4s,transform 0.4s; opacity:0; transform:scale(0.9) translateY(3rem); pointer-events:none; }
+    #chat-box.open { opacity:1; transform:scale(1) translateY(0); pointer-events:all; }
+    .chat-head { padding:1.25rem; background:linear-gradient(to right,var(--slate-800),var(--bg-deep)); border-bottom:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:center; }
+    .chat-head-info { display:flex; align-items:center; gap:0.75rem; }
+    .chat-head-avatar { width:2.5rem; height:2.5rem; background:var(--white-5); border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid rgba(56,189,248,0.3); }
+    .chat-head-name { font-size:0.875rem; font-weight:700; color:#fff; line-height:1; }
+    .chat-head-status { display:flex; align-items:center; gap:0.375rem; font-size:0.625rem; color:var(--blue-400); margin-top:0.25rem; }
+    .chat-head-status .dot { width:0.375rem; height:0.375rem; border-radius:50%; background:var(--blue-400); }
+    .chat-close-btn { background:none; border:none; color:var(--slate-400); cursor:pointer; }
+    .chat-close-btn:hover { color:#fff; }
+    .chat-messages { flex:1; overflow-y:auto; padding:1rem; display:flex; flex-direction:column; gap:1rem; }
+    .msg-row { display:flex; }
+    .msg-row.user { justify-content:flex-end; }
+    .msg-bubble { max-width:85%; padding:0.875rem 1rem; border-radius:1rem; font-size:0.875rem; line-height:1.6; }
+    .msg-bubble.user { background:#2563eb; color:#fff; border-top-right-radius:0.25rem; }
+    .msg-bubble.bot { background:var(--white-5); color:var(--slate-200); border:1px solid var(--border-light); border-top-left-radius:0.25rem; }
+    .typing-bubble { background:var(--white-5); padding:0.875rem 1rem; border-radius:1rem; border:1px solid var(--border-light); display:flex; gap:0.375rem; align-items:center; }
+    .typing-dot { width:0.375rem; height:0.375rem; border-radius:50%; background:var(--blue-400); }
+    .typing-dot:nth-child(2){animation-delay:0.1s}
+    .typing-dot:nth-child(3){animation-delay:0.2s}
+    .chat-form { padding:1rem; border-top:1px solid var(--border-light); background:rgba(10,25,47,0.5); }
+    .chat-input-wrap { position:relative; display:flex; align-items:center; }
+    .chat-input { width:100%; background:var(--white-5); border:1px solid var(--white-10); border-radius:9999px; padding:0.75rem 3.5rem 0.75rem 1.25rem; font-size:0.875rem; color:#fff; outline:none; transition:border-color 0.2s; font-family:inherit; }
+    .chat-input:focus { border-color:var(--blue-400); }
+    .chat-input::placeholder { color:var(--slate-600); }
+    .chat-send-btn { position:absolute; right:0.375rem; width:2.5rem; height:2.5rem; background:var(--slate-200); color:var(--bg-deep); border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .chat-send-btn:hover { background:#fff; }
+    .chat-send-btn:disabled { opacity:0.4; cursor:not-allowed; }
+    #chat-toggle-btn { width:4rem; height:4rem; border-radius:50%; background:linear-gradient(135deg,var(--slate-200),var(--slate-400)); color:var(--bg-deep); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(0,0,0,0.5); transition:transform 0.3s; position:relative; }
+    #chat-toggle-btn:hover { transform:scale(1.1); }
+    #chat-toggle-btn .chat-tooltip { position:absolute; bottom:calc(100% + 0.75rem); right:0; background:#fff; color:var(--bg-deep); padding:0.5rem 1rem; border-radius:0.75rem; font-size:0.6875rem; font-weight:700; white-space:nowrap; box-shadow:0 4px 20px rgba(0,0,0,0.3); opacity:0; transform:translateY(0.5rem); transition:all 0.2s; pointer-events:none; }
     #chat-toggle-btn .chat-tooltip::after { content:''; position:absolute; bottom:-4px; right:1.5rem; width:8px; height:8px; background:#fff; transform:rotate(45deg); }
-    #chat-toggle-btn:hover .chat-tooltip { opacity: 1; transform: translateY(0); }
+    #chat-toggle-btn:hover .chat-tooltip { opacity:1; transform:translateY(0); }
 
-    /* ===== MODAL ===== */
-    #modal-overlay {
-      position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
-      background: rgba(10,25,47,0.8); backdrop-filter: blur(12px);
-      opacity: 0; pointer-events: none; transition: opacity 0.3s;
-    }
-    #modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal-box {
-      width: 100%; max-width: 36rem; background: var(--bg-card);
-      border: 1px solid var(--white-10); border-radius: 2rem;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.6); padding: 2.5rem;
-      position: relative; transform: scale(0.95);
-      transition: transform 0.3s;
-    }
-    #modal-overlay.open .modal-box { transform: scale(1); }
-    .modal-close {
-      position: absolute; top: 1.5rem; right: 1.5rem;
-      background: none; border: none; color: var(--slate-400); cursor: pointer;
-      padding: 0.5rem; border-radius: 50%; transition: background 0.2s;
-    }
-    .modal-close:hover { background: var(--white-5); color: #fff; }
-    .modal-title-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-    .modal-title { font-size: 1.75rem; font-weight: 700; color: #fff; }
-    .modal-sub { color: var(--slate-400); font-size: 0.875rem; margin-bottom: 2rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-label { display: block; font-size: 0.625rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.375rem; }
-    .form-input, .form-textarea {
-      width: 100%; background: var(--white-5); border: 1px solid var(--white-10);
-      border-radius: 0.75rem; padding: 0.75rem 1rem;
-      color: #fff; font-family: inherit; font-size: 0.875rem;
-      outline: none; transition: border-color 0.2s;
-    }
-    .form-input:focus, .form-textarea:focus { border-color: var(--blue-400); }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--slate-600); }
-    .form-textarea { height: 7rem; resize: none; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .btn-submit {
-      width: 100%; background: var(--slate-200); color: var(--bg-deep);
-      padding: 1rem; border-radius: 0.75rem; font-weight: 700; font-size: 1rem;
-      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      transition: all 0.2s; margin-top: 1rem;
-    }
-    .btn-submit:hover { background: #fff; }
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-    .modal-success { text-align: center; padding: 3rem 1rem; }
-    .success-icon { width: 5rem; height: 5rem; background: rgba(16,185,129,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-    .success-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
-    .success-desc { color: var(--slate-400); line-height: 1.7; margin-bottom: 2rem; }
-    .btn-close-success { padding: 0.75rem 2.5rem; background: var(--white-5); border: 1px solid var(--white-10); border-radius: 0.75rem; font-weight: 700; color: #fff; cursor: pointer; transition: background 0.2s; font-family: inherit; }
-    .btn-close-success:hover { background: rgba(255,255,255,0.1); }
+    #modal-overlay { position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:1.5rem; background:rgba(10,25,47,0.8); backdrop-filter:blur(12px); opacity:0; pointer-events:none; transition:opacity 0.3s; }
+    #modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal-box { width:100%; max-width:36rem; background:var(--bg-card); border:1px solid var(--white-10); border-radius:2rem; box-shadow:0 25px 60px rgba(0,0,0,0.6); padding:2.5rem; position:relative; transform:scale(0.95); transition:transform 0.3s; }
+    #modal-overlay.open .modal-box { transform:scale(1); }
+    .modal-close { position:absolute; top:1.5rem; right:1.5rem; background:none; border:none; color:var(--slate-400); cursor:pointer; padding:0.5rem; border-radius:50%; transition:background 0.2s; }
+    .modal-close:hover { background:var(--white-5); color:#fff; }
+    .modal-title-row { display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem; }
+    .modal-title { font-size:1.75rem; font-weight:700; color:#fff; }
+    .modal-sub { color:var(--slate-400); font-size:0.875rem; margin-bottom:2rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-label { display:block; font-size:0.625rem; font-weight:700; color:var(--slate-500); text-transform:uppercase; letter-spacing:0.2em; margin-bottom:0.375rem; }
+    .form-input, .form-textarea { width:100%; background:var(--white-5); border:1px solid var(--white-10); border-radius:0.75rem; padding:0.75rem 1rem; color:#fff; font-family:inherit; font-size:0.875rem; outline:none; transition:border-color 0.2s; }
+    .form-input:focus, .form-textarea:focus { border-color:var(--blue-400); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--slate-600); }
+    .form-textarea { height:7rem; resize:none; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .btn-submit { width:100%; background:var(--slate-200); color:var(--bg-deep); padding:1rem; border-radius:0.75rem; font-weight:700; font-size:1rem; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:all 0.2s; margin-top:1rem; font-family:inherit; }
+    .btn-submit:hover { background:#fff; }
+    .btn-submit:disabled { opacity:0.5; cursor:not-allowed; }
+    .modal-success { text-align:center; padding:3rem 1rem; }
+    .success-icon { width:5rem; height:5rem; background:rgba(16,185,129,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; }
+    .success-title { font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.5rem; }
+    .success-desc { color:var(--slate-400); line-height:1.7; margin-bottom:2rem; }
+    .btn-close-success { padding:0.75rem 2.5rem; background:var(--white-5); border:1px solid var(--white-10); border-radius:0.75rem; font-weight:700; color:#fff; cursor:pointer; transition:background 0.2s; font-family:inherit; }
+    .btn-close-success:hover { background:rgba(255,255,255,0.1); }
 
-    /* ===== OVERLAY backdrop for sidebar ===== */
-    #sidebar-overlay { position: fixed; inset: 0; background: rgba(10,25,47,0.7); z-index: 65; display: none; }
-    #sidebar-overlay.open { display: block; }
+    #sidebar-overlay { position:fixed; inset:0; background:rgba(10,25,47,0.7); z-index:65; display:none; }
+    #sidebar-overlay.open { display:block; }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: block; }
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
-      .hw-grid { grid-template-columns: 1fr; }
-      .sw-grid { grid-template-columns: 1fr; }
-      .sw-app-section { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .pkg-carousel { padding: 0 2.5rem; }
-      #chat-box { width: calc(100vw - 2rem); }
-      .svc-card { flex-direction: column; }
-      .form-grid { grid-template-columns: 1fr; }
-      #prev-pkg { left: -1.25rem; }
-      #next-pkg { right: -1.25rem; }
+      .nav-links { display:none; }
+      .hamburger { display:block; }
+      .hero-inner { grid-template-columns:1fr; }
+      .hero-card { display:none; }
+      .hw-grid { grid-template-columns:1fr; }
+      .sw-grid { grid-template-columns:1fr; }
+      .sw-app-section { grid-template-columns:1fr; }
+      .footer-inner { grid-template-columns:1fr; }
+      .pkg-carousel { padding:0 2.5rem; }
+      #chat-box { width:calc(100vw - 2rem); }
+      .svc-card { flex-direction:column; }
+      .form-grid { grid-template-columns:1fr; }
+      #prev-pkg { left:-1.25rem; }
+      #next-pkg { right:-1.25rem; }
     }
-
-    /* Icons in HTML */
-    .icon-wrap { display: inline-flex; align-items: center; justify-content: center; }
   </style>
 </head>
 <body>
@@ -712,34 +373,22 @@
 <!-- MODAL -->
 <div id="modal-overlay">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()" aria-label="ปิด">
+    <button class="modal-close" onclick="closeModal()">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div id="modal-form-content">
       <div class="modal-title-row">
-        <svg width="28" height="28" viewBox="0 0 100 100" fill="none"><defs><filter id="glow2"><feGaussianBlur stdDeviation="2" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow2)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow2)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/><path d="M35 35H55" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M35 45H65" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><circle cx="65" cy="45" r="2" fill="#38BDF8" opacity="0.6"/><rect x="70" y="38" width="20" height="6" fill="#38BDF8"/><rect x="77" y="31" width="6" height="20" fill="#38BDF8"/></svg>
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none"><defs><filter id="g2"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#g2)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#g2)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/><path d="M35 35H55" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M35 45H65" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><circle cx="65" cy="45" r="2" fill="#38BDF8" opacity="0.6"/><rect x="70" y="38" width="20" height="6" fill="#38BDF8"/><rect x="77" y="31" width="6" height="20" fill="#38BDF8"/></svg>
         <h3 class="modal-title">ติดต่อเรา</h3>
       </div>
       <p class="modal-sub">กรุณากรอกข้อมูลเพื่อให้เจ้าหน้าที่ติดต่อกลับโดยเร็วที่สุด</p>
       <form id="quote-form" onsubmit="submitForm(event)">
-        <div class="form-group">
-          <label class="form-label">ชื่อ-นามสกุล</label>
-          <input id="f-name" required type="text" class="form-input" placeholder="คุณสมชาย ใจดี"/>
-        </div>
+        <div class="form-group"><label class="form-label">ชื่อ-นามสกุล</label><input id="f-name" required type="text" class="form-input" placeholder="คุณสมชาย ใจดี"/></div>
         <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label">เบอร์โทรศัพท์</label>
-            <input id="f-phone" required type="tel" class="form-input" placeholder="08X-XXX-XXXX"/>
-          </div>
-          <div class="form-group">
-            <label class="form-label">อีเมล</label>
-            <input id="f-email" required type="email" class="form-input" placeholder="example@mail.com"/>
-          </div>
+          <div class="form-group"><label class="form-label">เบอร์โทรศัพท์</label><input id="f-phone" required type="tel" class="form-input" placeholder="08X-XXX-XXXX"/></div>
+          <div class="form-group"><label class="form-label">อีเมล</label><input id="f-email" required type="email" class="form-input" placeholder="example@mail.com"/></div>
         </div>
-        <div class="form-group">
-          <label class="form-label">รายละเอียดความต้องการ</label>
-          <textarea id="f-req" class="form-textarea" placeholder="ระบุรายละเอียดโครงการ หรือปัญหาที่ต้องการความช่วยเหลือ..."></textarea>
-        </div>
+        <div class="form-group"><label class="form-label">รายละเอียดความต้องการ</label><textarea id="f-req" class="form-textarea" placeholder="ระบุรายละเอียดโครงการ หรือปัญหาที่ต้องการความช่วยเหลือ..."></textarea></div>
         <button id="submit-btn" type="submit" class="btn-submit">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           <span>ยืนยันการส่งข้อมูล</span>
@@ -747,9 +396,7 @@
       </form>
     </div>
     <div id="modal-success" class="modal-success" style="display:none;">
-      <div class="success-icon">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
+      <div class="success-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
       <h3 class="success-title">ส่งข้อมูลเรียบร้อย!</h3>
       <p class="success-desc">ข้อมูลถูกส่งไปยังทีมงานเรียบร้อยแล้ว เราจะรีบดำเนินการติดต่อกลับหาคุณโดยเร็วที่สุด</p>
       <button class="btn-close-success" onclick="closeModal()">ปิดหน้าต่าง</button>
@@ -757,34 +404,32 @@
   </div>
 </div>
 
-<!-- SIDEBAR OVERLAY -->
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
 
 <!-- SIDEBAR -->
 <aside id="sidebar">
   <div class="sidebar-head">
     <div class="sidebar-head-title">
-      <svg width="32" height="32" viewBox="0 0 100 100" fill="none"><defs><filter id="glow3"><feGaussianBlur stdDeviation="2" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow3)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow3)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg>
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg>
       <h2>Packages</h2>
     </div>
-    <button onclick="closeSidebar()" style="background:none;border:none;color:var(--slate-400);cursor:pointer;padding:0.5rem;border-radius:50%;transition:background 0.2s" onmouseover="this.style.background='var(--white-5)'" onmouseout="this.style.background='none'">
+    <button onclick="closeSidebar()" style="background:none;border:none;color:var(--slate-400);cursor:pointer;padding:0.5rem;border-radius:50%;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
   </div>
   <div class="sidebar-body custom-scrollbar" id="sidebar-packages"></div>
 </aside>
 
-<!-- SIDEBAR TRIGGER -->
 <button id="sidebar-trigger" onclick="openSidebar()">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
   <span>Compare</span>
 </button>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
     <div class="nav-brand">
-      <svg width="48" height="48" viewBox="0 0 100 100" fill="none"><defs><filter id="glow4"><feGaussianBlur stdDeviation="2" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow4)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow4)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/><path d="M35 35H55" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M35 45H65" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><circle cx="65" cy="45" r="2" fill="#38BDF8" opacity="0.6"/><rect x="70" y="38" width="20" height="6" fill="#38BDF8"/><rect x="77" y="31" width="6" height="20" fill="#38BDF8"/></svg>
+      <svg width="48" height="48" viewBox="0 0 100 100" fill="none"><defs><filter id="g4"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#g4)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#g4)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/><path d="M35 35H55" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><path d="M35 45H65" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" opacity="0.6"/><circle cx="65" cy="45" r="2" fill="#38BDF8" opacity="0.6"/><rect x="70" y="38" width="20" height="6" fill="#38BDF8"/><rect x="77" y="31" width="6" height="20" fill="#38BDF8"/></svg>
       <div class="nav-brand-text">
         <span class="nav-brand-title">PARK INNOVATION</span>
         <span class="nav-brand-sub">Plus +</span>
@@ -796,11 +441,18 @@
       <a href="#อุปกรณ์อัจฉริยะ">อุปกรณ์อัจฉริยะ</a>
       <a href="#ระบบซอฟต์แวร์">ระบบซอฟต์แวร์</a>
       <a href="#ติดต่อเรา">ติดต่อเรา</a>
+      <a href="http://api.parkinnovationplus.com:8080/" target="_blank" rel="noopener noreferrer" class="nav-manage-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        ระบบบริหารจัดการ
+      </a>
       <button class="btn-quote" onclick="openModal()">ขอใบเสนอราคา</button>
-      <button id="theme-toggle" onclick="toggleTheme()" title="เปลี่ยนธีม"><svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+      <button id="theme-toggle" onclick="toggleTheme()" title="เปลี่ยนธีม">
+        <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     </div>
-    <button class="hamburger" id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
@@ -809,25 +461,23 @@
     <a href="#อุปกรณ์อัจฉริยะ" onclick="closeMobileMenu()">อุปกรณ์อัจฉริยะ</a>
     <a href="#ระบบซอฟต์แวร์" onclick="closeMobileMenu()">ระบบซอฟต์แวร์</a>
     <a href="#ติดต่อเรา" onclick="closeMobileMenu()">ติดต่อเรา</a>
-    <button class="btn-quote" onclick="openModal(); closeMobileMenu()">ขอใบเสนอราคา</button>
+    <a href="http://api.parkinnovationplus.com:8080/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" style="display:inline-flex;align-items:center;gap:0.5rem;color:var(--blue-400);font-weight:600;text-decoration:none;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      ระบบบริหารจัดการ
+    </a>
+    <button class="btn-quote" onclick="openModal();closeMobileMenu()">ขอใบเสนอราคา</button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="หน้าแรก">
   <div class="hero-bg"></div>
-  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-dots"></div>
   <div class="hero-inner">
     <div>
-      <div class="reveal" style="transition-delay:100ms">
-        <div class="hero-badge"><div class="dot animate-pulse"></div><span>Smart Parking Management</span></div>
-      </div>
-      <div class="reveal" style="transition-delay:300ms">
-        <h1 class="hero-title">ยกระดับระบบจอดรถ <br/><span>เพื่อโครงการระดับพรีเมียม</span></h1>
-      </div>
-      <div class="reveal" style="transition-delay:500ms">
-        <p class="hero-sub">เทคโนโลยี AI LPR และ Cloud Computing ครบวงจร สำหรับหมู่บ้านหรูและคอนโดมิเนียมชั้นนำ</p>
-      </div>
+      <div class="reveal" style="transition-delay:100ms"><div class="hero-badge"><div class="dot animate-pulse"></div><span>Smart Parking Management</span></div></div>
+      <div class="reveal" style="transition-delay:300ms"><h1 class="hero-title">ยกระดับระบบจอดรถ <br/><span>เพื่อโครงการระดับพรีเมียม</span></h1></div>
+      <div class="reveal" style="transition-delay:500ms"><p class="hero-sub">เทคโนโลยี AI LPR และ Cloud Computing ครบวงจร สำหรับหมู่บ้านหรูและคอนโดมิเนียมชั้นนำ</p></div>
       <div class="reveal" style="transition-delay:700ms">
         <button class="btn-primary" onclick="openModal()">
           <span>เริ่มยกระดับโครงการของคุณ</span>
@@ -839,12 +489,9 @@
       <div class="hero-card">
         <div class="hero-lpr-badge animate-bounce-slow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <div>
-            <div class="lpr-label">LPR Active</div>
-            <div class="lpr-plate">กข 1234</div>
-          </div>
+          <div><div class="lpr-label">LPR Active</div><div class="lpr-plate">กข 1234</div></div>
         </div>
-        <div class="hero-bar" style="animation: pulse 2s ease-in-out infinite;"></div>
+        <div class="hero-bar animate-pulse"></div>
         <div class="hero-brand-badge">
           <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/></svg>
           <span>Parking Management Systems</span>
@@ -863,15 +510,9 @@
       <p class="section-sub">โซลูชันที่ปรับแต่งได้ตามขนาดและความต้องการของโครงการ</p>
     </div>
     <div class="pkg-carousel">
-      <div class="pkg-overflow">
-        <div class="pkg-track" id="pkg-track"></div>
-      </div>
-      <button class="carousel-btn" id="prev-pkg" onclick="prevPkg()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="carousel-btn" id="next-pkg" onclick="nextPkg()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+      <div class="pkg-overflow"><div class="pkg-track" id="pkg-track"></div></div>
+      <button class="carousel-btn" id="prev-pkg" onclick="prevPkg()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="carousel-btn" id="next-pkg" onclick="nextPkg()"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
       <div class="pkg-dots" id="pkg-dots"></div>
     </div>
   </div>
@@ -880,32 +521,11 @@
 <!-- HARDWARE -->
 <section id="อุปกรณ์อัจฉริยะ">
   <div style="max-width:80rem;margin:0 auto;padding:0 1.5rem;text-align:center;">
-    <div class="reveal">
-      <h2 class="section-title">Smart Hardware</h2>
-      <div class="section-line"></div>
-    </div>
+    <div class="reveal"><h2 class="section-title">Smart Hardware</h2><div class="section-line"></div></div>
     <div class="hw-grid">
-      <div class="hw-card reveal" style="transition-delay:0ms">
-        <div class="hw-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="hw-title">Smart Barriers</h3>
-        <p class="hw-desc">ไม้กั้นความเร็วสูง ทนทาน เปิด-ปิดเงียบสนิทด้วยมอเตอร์เทคโนโลยีเยอรมัน</p>
-      </div>
-      <div class="hw-card reveal" style="transition-delay:200ms">
-        <div class="hw-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        </div>
-        <h3 class="hw-title">AI LPR Cameras</h3>
-        <p class="hw-desc">อ่านป้ายทะเบียนไทยแม่นยำสูง 99.9% แม้ในสภาวะแสงน้อยหรือฝนตกหนัก</p>
-      </div>
-      <div class="hw-card reveal" style="transition-delay:400ms">
-        <div class="hw-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        </div>
-        <h3 class="hw-title">Payment Kiosks</h3>
-        <p class="hw-desc">ตู้ชำระเงินอัตโนมัติครบวงจร รองรับ QR, Credit Card และระบบสมาชิก</p>
-      </div>
+      <div class="hw-card reveal" style="transition-delay:0ms"><div class="hw-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="hw-title">Smart Barriers</h3><p class="hw-desc">ไม้กั้นความเร็วสูง ทนทาน เปิด-ปิดเงียบสนิทด้วยมอเตอร์เทคโนโลยีเยอรมัน</p></div>
+      <div class="hw-card reveal" style="transition-delay:200ms"><div class="hw-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><h3 class="hw-title">AI LPR Cameras</h3><p class="hw-desc">อ่านป้ายทะเบียนไทยแม่นยำสูง 99.9% แม้ในสภาวะแสงน้อยหรือฝนตกหนัก</p></div>
+      <div class="hw-card reveal" style="transition-delay:400ms"><div class="hw-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><h3 class="hw-title">Payment Kiosks</h3><p class="hw-desc">ตู้ชำระเงินอัตโนมัติครบวงจร รองรับ QR, Credit Card และระบบสมาชิก</p></div>
     </div>
   </div>
 </section>
@@ -913,99 +533,38 @@
 <!-- SOFTWARE -->
 <section id="ระบบซอฟต์แวร์">
   <div class="sw-inner">
-    <div class="section-head reveal" style="text-align:center;">
-      <h2 class="section-title">Software Ecosystem</h2>
-      <div class="section-line"></div>
-    </div>
+    <div class="section-head reveal" style="text-align:center;"><h2 class="section-title">Software Ecosystem</h2><div class="section-line"></div></div>
     <div class="sw-grid">
       <div class="reveal" style="transition-delay:200ms">
         <span class="sw-badge">Cloud Platform</span>
         <h3 class="sw-title">Enterprise Cloud <br/>Management</h3>
         <div class="sw-features">
-          <div class="sw-feat">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            <div class="sw-feat-title">Real-time Dashboard</div>
-            <div class="sw-feat-desc">ติดตามสถานะจอดรถแบบสด</div>
-          </div>
-          <div class="sw-feat">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <div class="sw-feat-title">Member System</div>
-            <div class="sw-feat-desc">จัดการฐานข้อมูลและสิทธิ์สมาชิก</div>
-          </div>
-          <div class="sw-feat">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            <div class="sw-feat-title">Financial Reports</div>
-            <div class="sw-feat-desc">สรุปรายได้อัตโนมัติ</div>
-          </div>
-          <div class="sw-feat">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <div class="sw-feat-title">Legal Ready</div>
-            <div class="sw-feat-desc">PDPA Compliance มาตรฐานสูง</div>
-          </div>
+          <div class="sw-feat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><div class="sw-feat-title">Real-time Dashboard</div><div class="sw-feat-desc">ติดตามสถานะจอดรถแบบสด</div></div>
+          <div class="sw-feat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div class="sw-feat-title">Member System</div><div class="sw-feat-desc">จัดการฐานข้อมูลและสิทธิ์สมาชิก</div></div>
+          <div class="sw-feat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><div class="sw-feat-title">Financial Reports</div><div class="sw-feat-desc">สรุปรายได้อัตโนมัติ</div></div>
+          <div class="sw-feat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><div class="sw-feat-title">Legal Ready</div><div class="sw-feat-desc">PDPA Compliance มาตรฐานสูง</div></div>
         </div>
       </div>
       <div class="reveal" style="transition-delay:400ms">
         <div class="sw-mockup">
-          <div class="sw-mock-topbar">
-            <span class="sw-mock-label">Admin Console v3.1</span>
-            <div class="sw-mock-dots"><div class="dot-red"></div><div class="dot-yellow"></div><div class="dot-green"></div></div>
-          </div>
+          <div class="sw-mock-topbar"><span class="sw-mock-label">Admin Console v3.1</span><div class="sw-mock-dots"><div class="dot-red"></div><div class="dot-yellow"></div><div class="dot-green"></div></div></div>
           <div class="sw-mock-bar"></div>
           <div class="sw-mock-cards"><div class="sw-mock-card"></div><div class="sw-mock-card"></div><div class="sw-mock-card"></div></div>
-          <div class="sw-mock-chart">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(56,189,248,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
+          <div class="sw-mock-chart"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(56,189,248,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         </div>
       </div>
     </div>
     <div class="sw-app-section">
       <div>
-        <div class="reveal" style="transition-delay:100ms">
-          <h4 class="sw-app-title">Application Client Solutions</h4>
-          <p class="sw-app-desc">เชื่อมต่อการทำงานไม่สะดุดระหว่างลูกบ้านและนิติบุคคลผ่านแอปพลิเคชันระดับ Enterprise</p>
-        </div>
+        <div class="reveal" style="transition-delay:100ms"><h4 class="sw-app-title">Application Client Solutions</h4><p class="sw-app-desc">เชื่อมต่อการทำงานไม่สะดุดระหว่างลูกบ้านและนิติบุคคลผ่านแอปพลิเคชันระดับ Enterprise</p></div>
         <div class="sw-app-items">
-          <div class="sw-app-item reveal" style="transition-delay:300ms">
-            <div class="sw-app-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><rect x="7" y="7" width="3" height="9"/><rect x="14" y="7" width="3" height="5"/></svg>
-            </div>
-            <div>
-              <div class="sw-app-item-title">Visitor E-Stamp</div>
-              <div class="sw-app-item-desc">ประทับตราออนไลน์รวดเร็ว</div>
-            </div>
-          </div>
-          <div class="sw-app-item reveal" style="transition-delay:450ms">
-            <div class="sw-app-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-            </div>
-            <div>
-              <div class="sw-app-item-title">E-Payment</div>
-              <div class="sw-app-item-desc">จ่ายค่าจอดรถผ่าน QR</div>
-            </div>
-          </div>
-          <div class="sw-app-item reveal" style="transition-delay:600ms">
-            <div class="sw-app-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <div class="sw-app-item-title">Pre-Regis</div>
-              <div class="sw-app-item-desc">ลงทะเบียนผู้มาติดต่อล่วงหน้า</div>
-            </div>
-          </div>
-          <div class="sw-app-item reveal" style="transition-delay:750ms">
-            <div class="sw-app-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-            </div>
-            <div>
-              <div class="sw-app-item-title">Alerts</div>
-              <div class="sw-app-item-desc">แจ้งเตือนรถเข้า-ออกทันที</div>
-            </div>
-          </div>
+          <div class="sw-app-item reveal" style="transition-delay:300ms"><div class="sw-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><rect x="7" y="7" width="3" height="9"/><rect x="14" y="7" width="3" height="5"/></svg></div><div><div class="sw-app-item-title">Visitor E-Stamp</div><div class="sw-app-item-desc">ประทับตราออนไลน์รวดเร็ว</div></div></div>
+          <div class="sw-app-item reveal" style="transition-delay:450ms"><div class="sw-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div><div class="sw-app-item-title">E-Payment</div><div class="sw-app-item-desc">จ่ายค่าจอดรถผ่าน QR</div></div></div>
+          <div class="sw-app-item reveal" style="transition-delay:600ms"><div class="sw-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="sw-app-item-title">Pre-Regis</div><div class="sw-app-item-desc">ลงทะเบียนผู้มาติดต่อล่วงหน้า</div></div></div>
+          <div class="sw-app-item reveal" style="transition-delay:750ms"><div class="sw-app-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><div><div class="sw-app-item-title">Alerts</div><div class="sw-app-item-desc">แจ้งเตือนรถเข้า-ออกทันที</div></div></div>
         </div>
       </div>
-      <div class="sw-phone-mock reveal" style="transition-delay:300ms">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-      </div>
+      <div class="sw-phone-mock reveal" style="transition-delay:300ms"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
     </div>
   </div>
 </section>
@@ -1035,25 +594,16 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">
-        <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><defs><filter id="glow5"><feGaussianBlur stdDeviation="2" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow5)"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" filter="url(#glow5)"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg>
+        <svg width="40" height="40" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg>
         <span class="footer-brand-name">Park Innovation Plus</span>
       </div>
       <p class="footer-desc">นวัตกรรมระบบจอดรถอัจฉริยะที่ออกแบบมาเพื่อโครงการระดับพรีเมียมโดยเฉพาะ</p>
     </div>
     <div>
       <h4 class="footer-col-title">ติดต่อเรา</h4>
-      <div class="footer-contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>215/45 หมู่ที่ 3 ตำบลสำโรง อำเภอพระประแดง จังหวัดสมุทรปราการ 10130</span>
-      </div>
-      <div class="footer-contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.37a2 2 0 0 1 1.97-2.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.78-1.78a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div><div>06-2661-4562</div><div>08-0165-9459</div></div>
-      </div>
-      <div class="footer-contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1969786b72707777766f786d70767769756c6a597e74787075377a7674">[email&#160;protected]</a></span>
-      </div>
+      <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>215/45 หมู่ที่ 3 ตำบลสำโรง อำเภอพระประแดง จังหวัดสมุทรปราการ 10130</span></div>
+      <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.37a2 2 0 0 1 1.97-2.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.78-1.78a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><div>06-2661-4562</div><div>08-0165-9459</div></div></div>
+      <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>parkinnovationplus@gmail.com</span></div>
     </div>
     <div>
       <h4 class="footer-col-title">ติดตามเรา</h4>
@@ -1067,43 +617,35 @@
   <div class="footer-bottom">© 2024 Park Innovation Plus Co., Ltd. All Rights Reserved.</div>
 </footer>
 
-<!-- AI CHAT -->
+<!-- CHAT -->
 <div id="chat-wrap">
   <div id="chat-box">
     <div class="chat-head">
       <div class="chat-head-info">
-        <div class="chat-head-avatar">
-          <svg width="24" height="24" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/></svg>
-        </div>
-        <div>
-          <div class="chat-head-name">AI Support</div>
-          <div class="chat-head-status"><span class="dot animate-pulse"></span>Online</div>
-        </div>
+        <div class="chat-head-avatar"><svg width="24" height="24" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <div><div class="chat-head-name">AI Support</div><div class="chat-head-status"><span class="dot animate-pulse"></span>Online</div></div>
       </div>
-      <button class="chat-close-btn" onclick="toggleChat()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+      <button class="chat-close-btn" onclick="toggleChat()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="chat-messages custom-scrollbar" id="chat-messages"></div>
     <div class="chat-form">
       <div class="chat-input-wrap">
         <input type="text" id="chat-input" class="chat-input" placeholder="สอบถามข้อมูลที่นี่..." onkeydown="if(event.key==='Enter')sendMessage()"/>
-        <button class="chat-send-btn" id="chat-send" onclick="sendMessage()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
+        <button class="chat-send-btn" id="chat-send" onclick="sendMessage()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
       </div>
     </div>
   </div>
   <button id="chat-toggle-btn" onclick="toggleChat()">
     <span class="chat-tooltip">คุยกับเราตอนนี้!</span>
-    <span id="chat-icon">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    </span>
+    <span id="chat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
   </button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ===== CONFIG =====
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="กลับขึ้นด้านบน">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
 const apiKey = "";
 const modelName = "gemini-2.5-flash-preview-09-2025";
 const systemPrompt = `คุณคือผู้ช่วยอัจฉริยะ (AI Customer Support) ของบริษัท "Park Innovation Plus" ผู้นำด้านระบบบริหารจัดการที่จอดรถอัจฉริยะ
@@ -1116,7 +658,6 @@ const systemPrompt = `คุณคือผู้ช่วยอัจฉริ�
 ข้อมูลติดต่อ: เบอร์โทรศัพท์: 06-2661-4562, 08-0165-9459 | ที่อยู่: 215/45 หมู่ที่ 3 ตำบลสำโรง อำเภอพระประแดง จังหวัดสมุทรปราการ 10130 | อีเมล: parkinnovationplus@gmail.com
 บุคลิก: สุภาพ, เป็นมืออาชีพ, มั่นใจในเทคโนโลยี, ใช้ภาษาไทยที่ดูหรูหราและเชื่อถือได้`;
 
-// ===== PACKAGES DATA =====
 const packages = [
   { id:1, name:'Begin รายเดือน', price:'2,500', tag:'Starter', items:['คอมพิวเตอร์','Barcode/Reader','Printer'] },
   { id:2, name:'Standard รายเดือน', price:'3,500', tag:'Popular', items:['คอมพิวเตอร์','Barcode/Reader','Printer','Control Barrier Gate x2','Control Camera x2'] },
@@ -1124,7 +665,6 @@ const packages = [
   { id:4, name:'Custom Enterprise', price:'Custom', tag:'Premium', items:['Barcode/Reader','Printer','Camera','Barrier Gate','Control Barrier Gate','Control Camera','Kiosk Auto In Out'] }
 ];
 
-// ===== RENDER PACKAGES =====
 const track = document.getElementById('pkg-track');
 const dots = document.getElementById('pkg-dots');
 const sidebarPkgs = document.getElementById('sidebar-packages');
@@ -1133,125 +673,54 @@ let activePkg = 0;
 packages.forEach((pkg, idx) => {
   const slide = document.createElement('div');
   slide.className = 'pkg-slide';
-  slide.innerHTML = `
-    <div class="pkg-card">
-      <div class="pkg-card-left">
-        <div class="pkg-card-icon-row">
-          <div class="pkg-icon-wrap">
-            ${pkg.tag==='Starter'?'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>':
-            pkg.tag==='Popular'?'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--slate-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>':
-            pkg.tag==='Best Value'?'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>':
-            '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'}
-          </div>
-          <div>
-            <div class="pkg-tag">${pkg.tag}</div>
-            <div class="pkg-name">${pkg.name}</div>
-          </div>
-        </div>
-        <div class="pkg-price-row">
-          <div class="pkg-price-label">ราคาเริ่มต้น</div>
-          <div class="pkg-price">${pkg.price==='Custom'?'Custom':'฿'+pkg.price}${pkg.price!=='Custom'?'<span>/ เดือน</span>':''}</div>
-        </div>
-        <div class="pkg-items">
-          ${pkg.items.map(item=>`<div class="pkg-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>${item}</span></div>`).join('')}
-        </div>
-        <button class="btn-pkg" onclick="openModal()">ขอใบเสนอราคาแพ็กเกจนี้</button>
-      </div>
-      <div class="pkg-card-watermark">
-        <svg width="160" height="160" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg>
-      </div>
-    </div>`;
+  const icons = {
+    Starter: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    Popular: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+    'Best Value': '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    Premium: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+  };
+  slide.innerHTML = `<div class="pkg-card"><div class="pkg-card-left"><div class="pkg-card-icon-row"><div class="pkg-icon-wrap">${icons[pkg.tag]}</div><div><div class="pkg-tag">${pkg.tag}</div><div class="pkg-name">${pkg.name}</div></div></div><div class="pkg-price-row"><div class="pkg-price-label">ราคาเริ่มต้น</div><div class="pkg-price">${pkg.price==='Custom'?'Custom':'฿'+pkg.price}${pkg.price!=='Custom'?'<span>/ เดือน</span>':''}</div></div><div class="pkg-items">${pkg.items.map(i=>`<div class="pkg-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--slate-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>${i}</span></div>`).join('')}</div><button class="btn-pkg" onclick="openModal()">ขอใบเสนอราคาแพ็กเกจนี้</button></div><div class="pkg-card-watermark"><svg width="160" height="160" viewBox="0 0 100 100" fill="none"><path d="M30 80V25H60C70 25 75 32 75 42C75 52 70 59 60 59H45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><path d="M45 59V80" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="80" r="3" fill="#38BDF8"/><circle cx="45" cy="80" r="3" fill="#38BDF8"/></svg></div></div>`;
   track.appendChild(slide);
-
   const dot = document.createElement('button');
   dot.className = 'pkg-dot' + (idx===0?' active':'');
   dot.onclick = () => goToPkg(idx);
   dots.appendChild(dot);
-
-  // Sidebar
   const sp = document.createElement('div');
   sp.className = 'sidebar-pkg';
-  sp.innerHTML = `
-    <div class="sidebar-pkg-head">
-      <div><div class="sidebar-pkg-tag">${pkg.tag}</div><div class="sidebar-pkg-name">${pkg.name}</div></div>
-      <div><div class="sidebar-pkg-price-label">Starting At</div><div class="sidebar-pkg-price">฿${pkg.price}${pkg.price!=='Custom'?'<span>/ด.</span>':''}</div></div>
-    </div>
-    <ul>${pkg.items.map(item=>`<li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--slate-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>${item}</li>`).join('')}</ul>`;
+  sp.innerHTML = `<div class="sidebar-pkg-head"><div><div class="sidebar-pkg-tag">${pkg.tag}</div><div class="sidebar-pkg-name">${pkg.name}</div></div><div><div class="sidebar-pkg-price-label">Starting At</div><div class="sidebar-pkg-price">฿${pkg.price}${pkg.price!=='Custom'?'<span>/ด.</span>':''}</div></div></div><ul>${pkg.items.map(i=>`<li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--slate-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>${i}</li>`).join('')}</ul>`;
   sidebarPkgs.appendChild(sp);
 });
 
 function goToPkg(idx) {
   activePkg = idx;
-  track.style.transform = `translateX(-${idx * 100}%)`;
+  track.style.transform = `translateX(-${idx*100}%)`;
   document.querySelectorAll('.pkg-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
 }
 function nextPkg() { goToPkg((activePkg+1)%packages.length); }
 function prevPkg() { goToPkg((activePkg-1+packages.length)%packages.length); }
 
-// ===== NAVBAR SCROLL =====
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('back-to-top').classList.toggle('show', window.scrollY > 400);
 });
 
-// ===== MOBILE MENU =====
-function toggleMobileMenu() {
-  document.getElementById('mobile-menu').classList.toggle('open');
-}
-function closeMobileMenu() {
-  document.getElementById('mobile-menu').classList.remove('open');
-}
-
-// ===== SIDEBAR =====
-function openSidebar() {
-  document.getElementById('sidebar').classList.add('open');
-  document.getElementById('sidebar-overlay').classList.add('open');
-  document.getElementById('sidebar-trigger').classList.add('hidden');
-}
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('open');
-  document.getElementById('sidebar-overlay').classList.remove('open');
-  document.getElementById('sidebar-trigger').classList.remove('hidden');
-}
-
-// ===== MODAL =====
-function openModal() {
-  document.getElementById('modal-overlay').classList.add('open');
-  document.getElementById('modal-form-content').style.display='block';
-  document.getElementById('modal-success').style.display='none';
-}
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-}
-document.getElementById('modal-overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
+function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
+function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+function openSidebar() { document.getElementById('sidebar').classList.add('open'); document.getElementById('sidebar-overlay').classList.add('open'); document.getElementById('sidebar-trigger').classList.add('hidden'); }
+function closeSidebar() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebar-overlay').classList.remove('open'); document.getElementById('sidebar-trigger').classList.remove('hidden'); }
+function openModal() { document.getElementById('modal-overlay').classList.add('open'); document.getElementById('modal-form-content').style.display='block'; document.getElementById('modal-success').style.display='none'; }
+function closeModal() { document.getElementById('modal-overlay').classList.remove('open'); }
+document.getElementById('modal-overlay').addEventListener('click', function(e) { if(e.target===this) closeModal(); });
 
 async function submitForm(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
-  btn.innerHTML = '<svg class="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg><span>กำลังส่ง...</span>';
-  const data = {
-    Name: document.getElementById('f-name').value,
-    Phone: document.getElementById('f-phone').value,
-    Email: document.getElementById('f-email').value,
-    Requirements: document.getElementById('f-req').value,
-    _subject: `New Request from ${document.getElementById('f-name').value}`
-  };
+  btn.innerHTML = '<svg class="animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg><span>กำลังส่ง...</span>';
   try {
-    const res = await fetch('https://formspree.io/f/xgolrnjp', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (res.ok) {
-      document.getElementById('modal-form-content').style.display='none';
-      document.getElementById('modal-success').style.display='block';
-    } else {
-      alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง');
-      btn.disabled = false;
-      btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>ยืนยันการส่งข้อมูล</span>';
-    }
+    const res = await fetch('https://formspree.io/f/xgolrnjp', { method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'}, body:JSON.stringify({Name:document.getElementById('f-name').value,Phone:document.getElementById('f-phone').value,Email:document.getElementById('f-email').value,Requirements:document.getElementById('f-req').value,_subject:`New Request from ${document.getElementById('f-name').value}`}) });
+    if(res.ok) { document.getElementById('modal-form-content').style.display='none'; document.getElementById('modal-success').style.display='block'; }
+    else throw new Error();
   } catch(err) {
     alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง');
     btn.disabled = false;
@@ -1259,115 +728,44 @@ async function submitForm(e) {
   }
 }
 
-// ===== CHAT =====
-let chatOpen = false;
-let isTyping = false;
-const chatMessages = [];
-
+let chatOpen=false, isTyping=false;
+const chatMessages=[];
 function renderMessages() {
-  const container = document.getElementById('chat-messages');
-  container.innerHTML = '';
-  chatMessages.forEach(msg => {
-    const row = document.createElement('div');
-    row.className = `msg-row ${msg.role === 'user' ? 'user' : 'bot'}`;
-    const bubble = document.createElement('div');
-    bubble.className = `msg-bubble ${msg.role === 'user' ? 'user' : 'bot'}`;
-    bubble.textContent = msg.text;
-    row.appendChild(bubble);
-    container.appendChild(row);
-  });
-  if (isTyping) {
-    const row = document.createElement('div');
-    row.className = 'msg-row bot';
-    row.innerHTML = '<div class="typing-bubble"><div class="typing-dot animate-bounce"></div><div class="typing-dot animate-bounce"></div><div class="typing-dot animate-bounce"></div></div>';
-    container.appendChild(row);
-  }
-  container.scrollTop = container.scrollHeight;
+  const c=document.getElementById('chat-messages'); c.innerHTML='';
+  chatMessages.forEach(msg => { const row=document.createElement('div'); row.className=`msg-row ${msg.role==='user'?'user':'bot'}`; const b=document.createElement('div'); b.className=`msg-bubble ${msg.role==='user'?'user':'bot'}`; b.textContent=msg.text; row.appendChild(b); c.appendChild(row); });
+  if(isTyping) { const row=document.createElement('div'); row.className='msg-row bot'; row.innerHTML='<div class="typing-bubble"><div class="typing-dot animate-bounce"></div><div class="typing-dot animate-bounce"></div><div class="typing-dot animate-bounce"></div></div>'; c.appendChild(row); }
+  c.scrollTop=c.scrollHeight;
 }
-
-// Init chat
-chatMessages.push({ role: 'model', text: 'สวัสดีค่ะ Park Innovation Plus ยินดีให้บริการค่ะ มีข้อมูลส่วนไหนให้ช่วยแนะนำเกี่ยวกับระบบจอดรถอัจฉริยะไหมคะ?' });
+chatMessages.push({role:'model',text:'สวัสดีค่ะ Park Innovation Plus ยินดีให้บริการค่ะ มีข้อมูลส่วนไหนให้ช่วยแนะนำเกี่ยวกับระบบจอดรถอัจฉริยะไหมคะ?'});
 renderMessages();
-
 function toggleChat() {
-  chatOpen = !chatOpen;
-  document.getElementById('chat-box').classList.toggle('open', chatOpen);
-  document.getElementById('chat-icon').innerHTML = chatOpen
-    ? '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
-    : '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+  chatOpen=!chatOpen;
+  document.getElementById('chat-box').classList.toggle('open',chatOpen);
+  document.getElementById('chat-icon').innerHTML=chatOpen?'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>':'<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
 }
-
 async function sendMessage() {
-  const input = document.getElementById('chat-input');
-  const text = input.value.trim();
-  if (!text || isTyping) return;
-  chatMessages.push({ role: 'user', text });
-  input.value = '';
-  isTyping = true;
-  renderMessages();
-  document.getElementById('chat-send').disabled = true;
-
-  let responseText = 'ขออภัยค่ะ ระบบขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้งค่ะ';
-  if (apiKey) {
-    try {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
-      const payload = { contents: [{ parts: [{ text }] }], systemInstruction: { parts: [{ text: systemPrompt }] } };
-      const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-      if (res.ok) {
-        const result = await res.json();
-        responseText = result.candidates?.[0]?.content?.parts?.[0]?.text || responseText;
-      }
-    } catch(e) {}
-  } else {
-    responseText = 'ขออภัยค่ะ ระบบ AI ยังไม่ได้ตั้งค่า API Key กรุณาติดต่อเราโดยตรงที่เบอร์ 06-2661-4562 หรือ 08-0165-9459 ได้เลยค่ะ';
-  }
-
-  isTyping = false;
-  chatMessages.push({ role: 'model', text: responseText });
-  renderMessages();
-  document.getElementById('chat-send').disabled = false;
+  const input=document.getElementById('chat-input'); const text=input.value.trim();
+  if(!text||isTyping) return;
+  chatMessages.push({role:'user',text}); input.value=''; isTyping=true; renderMessages();
+  document.getElementById('chat-send').disabled=true;
+  let responseText='ขออภัยค่ะ ระบบขัดข้องชั่วคราว กรุณาลองใหม่อีกครั้งค่ะ';
+  if(apiKey) {
+    try { const url=`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`; const res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text}]}],systemInstruction:{parts:[{text:systemPrompt}]}})}); if(res.ok){const result=await res.json(); responseText=result.candidates?.[0]?.content?.parts?.[0]?.text||responseText;} } catch(e){}
+  } else { responseText='ขออภัยค่ะ ระบบ AI ยังไม่ได้ตั้งค่า API Key กรุณาติดต่อเราโดยตรงที่เบอร์ 06-2661-4562 หรือ 08-0165-9459 ได้เลยค่ะ'; }
+  isTyping=false; chatMessages.push({role:'model',text:responseText}); renderMessages();
+  document.getElementById('chat-send').disabled=false;
 }
 
-// ===== REVEAL ON SCROLL =====
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-revealEls.forEach(el => observer.observe(el));
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// ===== DARK / LIGHT MODE =====
 function toggleTheme() {
-  const body = document.body;
-  const isLight = body.classList.toggle('light');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  document.getElementById('theme-icon-moon').style.display = isLight ? 'none' : 'block';
-  document.getElementById('theme-icon-sun').style.display = isLight ? 'block' : 'none';
+  const isLight=document.body.classList.toggle('light');
+  localStorage.setItem('theme',isLight?'light':'dark');
+  document.getElementById('theme-icon-moon').style.display=isLight?'none':'block';
+  document.getElementById('theme-icon-sun').style.display=isLight?'block':'none';
 }
-if (localStorage.getItem('theme') === 'light') {
-  document.body.classList.add('light');
-  document.getElementById('theme-icon-moon').style.display = 'none';
-  document.getElementById('theme-icon-sun').style.display = 'block';
-}
-
+if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');document.getElementById('theme-icon-moon').style.display='none';document.getElementById('theme-icon-sun').style.display='block';}
 </script>
-
-<!-- BACK TO TOP -->
-<button id="back-to-top" onclick="scrollToTop()" title="กลับขึ้นด้านบน">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<script>
-// ===== BACK TO TOP =====
-const backToTopBtn = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  backToTopBtn.classList.toggle('show', window.scrollY > 400);
-});
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-</script>
-
 </body>
 </html>
