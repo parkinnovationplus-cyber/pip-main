@@ -81,12 +81,14 @@
     body.light .sw-app-item-title { color: #0A192F; }
     body.light #ติดต่อเรา { background: linear-gradient(to bottom,#e8edf3,#f0f4f8); }
     body.light .svc-card { background: #fff; border-color: rgba(0,0,0,0.08); }
+    body.light .svc-company { color: #0369a1; }
     body.light .svc-title { color: #0A192F; }
     body.light .svc-stat-num { color: #0A192F; }
     body.light .btn-svc { background: #0A192F; color: #fff; }
     body.light footer { background: #1e293b; }
     body.light .footer-brand-name { color: #fff; }
     body.light .footer-col-title { color: #fff; }
+    body.light .footer-company { color: #7dd3fc; }
     body.light .footer-inner { color: #94a3b8; }
     body.light .footer-bottom { color: #64748b; border-top: 1px solid rgba(255,255,255,0.08); }
     body.light #chat-box { background: rgba(255,255,255,0.97); border-color: rgba(0,0,0,0.1); }
@@ -284,6 +286,7 @@
     #ติดต่อเรา { padding:6rem 0; background:linear-gradient(to bottom,var(--bg-card),var(--bg-deep)); }
     .svc-inner { max-width:80rem; margin:0 auto; padding:0 1.5rem; }
     .svc-card { background:#0f172a; border-radius:2.5rem; padding:4rem; border:1px solid var(--border-light); display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:3rem; box-shadow:0 25px 60px rgba(0,0,0,0.4); }
+    .svc-company { font-size:0.9375rem; font-weight:600; color:var(--blue-400); margin-bottom:0.5rem; letter-spacing:0.02em; }
     .svc-title { font-size:1.875rem; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:1rem; }
     .svc-desc { color:var(--slate-400); line-height:1.7; font-weight:300; max-width:32rem; margin-bottom:1.5rem; }
     .svc-stats { display:flex; gap:3rem; }
@@ -298,11 +301,13 @@
     .footer-brand-name { font-size:1.1rem; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.05em; }
     .footer-desc { font-weight:300; max-width:20rem; line-height:1.7; }
     .footer-col-title { color:#fff; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.2em; margin-bottom:1rem; }
+    .footer-company { font-size:0.8125rem; font-weight:600; color:var(--blue-400); margin-bottom:0.85rem; line-height:1.45; }
     .footer-contact-item { display:flex; align-items:flex-start; gap:0.75rem; margin-bottom:0.75rem; line-height:1.6; }
     .footer-contact-item svg { color:var(--blue-400); flex-shrink:0; margin-top:2px; }
     .footer-social { display:flex; gap:1rem; }
-    .social-btn { width:2.5rem; height:2.5rem; border-radius:50%; border:1px solid var(--white-10); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background 0.2s; font-size:0.625rem; font-weight:700; color:var(--slate-400); background:none; }
-    .social-btn:hover { background:var(--white-10); color:#fff; }
+    .social-btn, a.social-btn { width:2.5rem; height:2.5rem; border-radius:50%; border:1px solid var(--white-10); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background 0.2s; font-size:0.625rem; font-weight:700; color:var(--slate-400); background:none; text-decoration:none; }
+    .social-btn:hover, a.social-btn:hover { background:var(--white-10); color:#fff; }
+    a.social-btn svg { display:block; }
     .footer-bottom { max-width:80rem; margin:3rem auto 0; padding:2rem 1.5rem 0; border-top:1px solid var(--border-light); text-align:center; color:var(--slate-600); font-size:0.625rem; text-transform:uppercase; font-weight:700; letter-spacing:0.2em; }
 
     @keyframes chatGridMove { 0% { background-position: 0 0, 0 0; } 100% { background-position: 220px 220px, 220px 220px; } }
@@ -619,6 +624,7 @@
   <div class="svc-inner">
     <div class="svc-card reveal">
       <div>
+        <p class="svc-company">บริษัท พาร์คอินโนเวชั่นพลัส จำกัด</p>
         <h2 class="svc-title">Maintenance Services</h2>
         <p class="svc-desc">ดูแลตลอด 24 ชม. ด้วยทีมช่างเทคนิคผู้เชี่ยวชาญ เข้าหน้างานทันทีภายใน 4 ชม. เมื่อเกิดปัญหา</p>
         <div class="svc-stats">
@@ -646,16 +652,17 @@
     </div>
     <div>
       <h4 class="footer-col-title">ติดต่อเรา</h4>
+      <p class="footer-company">บริษัท พาร์คอินโนเวชั่นพลัส จำกัด</p>
       <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>215/45 หมู่ที่ 3 ตำบลสำโรง อำเภอพระประแดง จังหวัดสมุทรปราการ 10130</span></div>
       <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.37a2 2 0 0 1 1.97-2.19h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.78-1.78a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><div>06-2661-4562</div><div>08-0165-9459</div></div></div>
       <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>parkinnovationplus@gmail.com</span></div>
     </div>
     <div>
-      <h4 class="footer-col-title">ติดตามเรา</h4>
+      <h4 class="footer-col-title">ช่องทางติดต่อโซเชียลมีเดีย</h4>
       <div class="footer-social">
-        <button class="social-btn">FB</button>
-        <button class="social-btn">LN</button>
-        <button class="social-btn">LI</button>
+        <a class="social-btn" href="https://www.facebook.com/parkinnovationplus" target="_blank" rel="noopener noreferrer" aria-label="Facebook Park Innovation Plus" title="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 8H6v4h3v12h5V12h3.642l.358-4H14V7.327C14 6.32 14.221 5 16.032 5H18V.97C17.751.934 16.754.9 15.623.9c-2.674 0-4.506 1.632-4.506 4.632V8z"/></svg></a>
+        <button type="button" class="social-btn">LN</button>
+        <button type="button" class="social-btn">LI</button>
       </div>
     </div>
   </div>
