@@ -356,11 +356,14 @@
     .chat-send-btn { flex-shrink:0; width:2.5rem; height:2.5rem; background:var(--slate-200); color:var(--bg-deep); border-radius:50%; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; margin-bottom:0.1rem; }
     .chat-send-btn:hover:not(:disabled) { background:#fff; }
     .chat-send-btn:disabled { opacity:0.4; cursor:not-allowed; }
-    #chat-toggle-btn { width:4rem; height:4rem; border-radius:50%; background:linear-gradient(135deg,var(--slate-200),var(--slate-400)); color:var(--bg-deep); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(0,0,0,0.5); transition:transform 0.3s; position:relative; }
+    @keyframes chatNudgePulse { 0%,100% { box-shadow:0 8px 30px rgba(0,0,0,0.5); } 50% { box-shadow:0 8px 28px rgba(56,189,248,0.55), 0 0 0 3px rgba(56,189,248,0.2); } }
+    #chat-toggle-btn { width:4rem; height:4rem; border-radius:50%; background:linear-gradient(135deg,var(--slate-200),var(--slate-400)); color:var(--bg-deep); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(0,0,0,0.5); transition:transform 0.3s, box-shadow 0.3s; position:relative; }
     #chat-toggle-btn:hover { transform:scale(1.1); }
-    #chat-toggle-btn .chat-tooltip { position:absolute; bottom:calc(100% + 0.75rem); right:0; background:#fff; color:var(--bg-deep); padding:0.5rem 1rem; border-radius:0.75rem; font-size:0.6875rem; font-weight:700; white-space:nowrap; box-shadow:0 4px 20px rgba(0,0,0,0.3); opacity:0; transform:translateY(0.5rem); transition:all 0.2s; pointer-events:none; }
+    #chat-toggle-btn .chat-tooltip { position:absolute; bottom:calc(100% + 0.75rem); right:0; background:#fff; color:var(--bg-deep); padding:0.5rem 0.85rem; border-radius:0.75rem; font-size:0.6875rem; font-weight:700; max-width:14rem; white-space:normal; text-align:center; line-height:1.35; box-shadow:0 4px 20px rgba(0,0,0,0.3); opacity:0; transform:translateY(0.5rem); transition:all 0.2s; pointer-events:none; }
     #chat-toggle-btn .chat-tooltip::after { content:''; position:absolute; bottom:-4px; right:1.5rem; width:8px; height:8px; background:#fff; transform:rotate(45deg); }
     #chat-toggle-btn:hover .chat-tooltip { opacity:1; transform:translateY(0); }
+    #chat-toggle-btn.chat-nudge-show-tooltip .chat-tooltip { opacity:1; transform:translateY(0); }
+    #chat-toggle-btn.chat-nudge-pulse { animation: chatNudgePulse 1.4s ease-in-out 3; }
 
     #modal-overlay { position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:1.5rem; background:rgba(10,25,47,0.8); backdrop-filter:blur(12px); opacity:0; pointer-events:none; transition:opacity 0.3s; }
     #modal-overlay.open { opacity:1; pointer-events:all; }
@@ -693,7 +696,7 @@
     </div>
   </div>
   <button id="chat-toggle-btn" onclick="toggleChat()">
-    <span class="chat-tooltip">คุยกับเราตอนนี้!</span>
+    <span class="chat-tooltip" id="chat-tooltip">คุยกับเราตอนนี้!</span>
     <span id="chat-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
   </button>
 </div>
@@ -705,6 +708,9 @@
 <script>
 const CHAT_API_URL = 'https://pip-chat.parkinnovationplus.workers.dev';
 const CHAT_ERROR_MSG = 'ขออภัย เกิดข้อผิดพลาด กรุณาลองใหม่';
+const CHAT_TOOLTIP_DEFAULT = 'คุยกับเราตอนนี้!';
+const SCROLL_NUDGE_TOOLTIP = 'กำลังดูแพ็กเกจอยู่หรือเปล่า? ถาม PIP AI ได้นะคะ';
+const SCROLL_NUDGE_KEY = 'pip-chat-scroll-nudge-done';
 
 function extractReplyFromPayload(data) {
   if (!data || typeof data !== 'object') return null;
@@ -892,8 +898,42 @@ function toggleChat() {
   chatOpen = !chatOpen;
   document.getElementById('chat-box').classList.toggle('open', chatOpen);
   document.getElementById('chat-icon').innerHTML = chatOpen ? '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' : '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+  const tip = document.getElementById('chat-tooltip');
+  if (tip && chatOpen) {
+    tip.textContent = CHAT_TOOLTIP_DEFAULT;
+    document.getElementById('chat-toggle-btn').classList.remove('chat-nudge-show-tooltip', 'chat-nudge-pulse');
+  }
   if (chatOpen) requestAnimationFrame(() => resizeChatInput());
 }
+
+function initScrollChatNudge() {
+  let fired = false;
+  const section = document.getElementById('แพ็กเกจ');
+  const btn = document.getElementById('chat-toggle-btn');
+  const tip = document.getElementById('chat-tooltip');
+  if (!section || !btn || !tip) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (fired) return;
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.1) return;
+        try {
+          if (sessionStorage.getItem(SCROLL_NUDGE_KEY)) return;
+        } catch (e) { return; }
+        if (chatStarted || chatMessages.length > 0) return;
+        fired = true;
+        try { sessionStorage.setItem(SCROLL_NUDGE_KEY, '1'); } catch (e) {}
+        tip.textContent = SCROLL_NUDGE_TOOLTIP;
+        btn.classList.add('chat-nudge-pulse', 'chat-nudge-show-tooltip');
+        setTimeout(() => btn.classList.remove('chat-nudge-show-tooltip'), 6500);
+        setTimeout(() => btn.classList.remove('chat-nudge-pulse'), 9000);
+      });
+    },
+    { threshold: [0, 0.1, 0.2] }
+  );
+  observer.observe(section);
+}
+initScrollChatNudge();
 
 async function sendMessage() {
   const input = document.getElementById('chat-input');
