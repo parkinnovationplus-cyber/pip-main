@@ -1,0 +1,7 @@
+# Line endings: normalize text files; keep binary untouched.
+* text=auto
+
+# Web pages: LF everywhere (avoids CRLF/LF churn and autocrlf warnings on Windows).
+*.html text eol=lf
+
+.gitattributes text eol=lf
