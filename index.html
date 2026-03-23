@@ -108,6 +108,19 @@
     body.light .nav-manage-btn { color: #0369a1; border-color: rgba(3,105,161,0.35); background: rgba(3,105,161,0.07); }
     body.light .nav-manage-btn:hover { background: rgba(3,105,161,0.15); border-color: #0369a1; color: #0A192F; }
     body.light #back-to-top { background: #0A192F; color: #fff; }
+    body.light .cookie-banner {
+      background: linear-gradient(to top, rgba(255,255,255,0.98), rgba(240,244,248,0.95));
+      border-top-color: rgba(0,0,0,0.08);
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.08);
+    }
+    body.light .cookie-banner__text { color: #475569; }
+    body.light .cookie-banner__text strong { color: #0A192F; }
+    body.light .btn-cookie-secondary { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.12); color: #334155; }
+    body.light .btn-cookie-secondary:hover { background: rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.18); color: #0A192F; }
+    body.light #cookie-policy-overlay .modal-box { background: #fff; }
+    body.light #cookie-policy-overlay .modal-title { color: #0A192F; }
+    body.light #cookie-policy-overlay .cookie-policy-body { color: #475569; }
+    body.light #cookie-policy-overlay .cookie-policy-body h4 { color: #0A192F; }
 
     /* MANAGEMENT MENU BUTTON */
     .nav-manage-btn {
@@ -396,6 +409,65 @@
     .btn-close-success { padding:0.75rem 2.5rem; background:var(--white-5); border:1px solid var(--white-10); border-radius:0.75rem; font-weight:700; color:#fff; cursor:pointer; transition:background 0.2s; font-family:inherit; }
     .btn-close-success:hover { background:rgba(255,255,255,0.1); }
 
+    /* COOKIE CONSENT (PDPA) */
+    .cookie-banner {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+      padding: 1rem 1.25rem 1.25rem;
+      background: linear-gradient(to top, rgba(10,25,47,0.98), rgba(17,24,39,0.94));
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid var(--white-10);
+      box-shadow: 0 -16px 48px rgba(0,0,0,0.45);
+      transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+    }
+    .cookie-banner.cookie-banner--hidden,
+    html.pip-cookie-accepted .cookie-banner {
+      transform: translateY(105%); opacity: 0; pointer-events: none;
+    }
+    .cookie-banner__inner {
+      max-width: 80rem; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 1.25rem;
+    }
+    .cookie-banner__text {
+      flex: 1 1 16rem; margin: 0; font-size: 0.875rem; line-height: 1.65; color: var(--slate-300);
+    }
+    .cookie-banner__text strong { color: #fff; font-weight: 600; }
+    .cookie-banner__actions { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; flex-shrink: 0; }
+    .btn-cookie-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      padding: 0.65rem 1.35rem; border-radius: 0.75rem; border: none; cursor: pointer; font-family: inherit;
+      font-size: 0.875rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--blue-400), #0ea5e9); color: #0A192F;
+      box-shadow: 0 4px 18px rgba(56,189,248,0.35); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cookie-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(56,189,248,0.45); }
+    .btn-cookie-secondary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.65rem 1.2rem; border-radius: 0.75rem; cursor: pointer; font-family: inherit;
+      font-size: 0.8125rem; font-weight: 600;
+      background: var(--white-5); border: 1px solid var(--white-10); color: var(--slate-200);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .btn-cookie-secondary:hover { background: var(--white-10); border-color: rgba(56,189,248,0.35); color: #fff; }
+    #cookie-policy-overlay {
+      position: fixed; inset: 0; z-index: 105;
+      display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+      background: rgba(10,25,47,0.85); backdrop-filter: blur(14px);
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #cookie-policy-overlay.open { opacity: 1; pointer-events: all; }
+    #cookie-policy-overlay .modal-box { max-width: 32rem; max-height: min(85vh, 36rem); display: flex; flex-direction: column; padding: 1.75rem 2rem 2rem; }
+    #cookie-policy-overlay.open .modal-box { transform: scale(1); }
+    #cookie-policy-overlay .cookie-policy-body {
+      overflow-y: auto; flex: 1; min-height: 0;
+      font-size: 0.8125rem; line-height: 1.75; color: var(--slate-400); margin: 0 0 0.5rem;
+    }
+    #cookie-policy-overlay .cookie-policy-body h4 {
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--slate-300); margin: 1.15rem 0 0.4rem;
+    }
+    #cookie-policy-overlay .cookie-policy-body h4:first-child { margin-top: 0; }
+    #cookie-policy-overlay .cookie-policy-body p { margin: 0 0 0.65rem; }
+
     #sidebar-overlay { position:fixed; inset:0; background:rgba(10,25,47,0.7); z-index:65; display:none; }
     #sidebar-overlay.open { display:block; }
 
@@ -414,10 +486,51 @@
       .form-grid { grid-template-columns:1fr; }
       #prev-pkg { left:-1.25rem; }
       #next-pkg { right:-1.25rem; }
+      .cookie-banner__inner { flex-direction: column; align-items: stretch; }
+      .cookie-banner__actions { width: 100%; flex-direction: column; }
+      .btn-cookie-primary, .btn-cookie-secondary { width: 100%; }
     }
   </style>
 </head>
 <body>
+<script>
+try { if (localStorage.getItem('pip_cookie_consent') === 'accepted') document.documentElement.classList.add('pip-cookie-accepted'); } catch (e) {}
+</script>
+
+<!-- COOKIE CONSENT -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-banner-title" aria-live="polite">
+  <div class="cookie-banner__inner">
+    <p id="cookie-banner-title" class="cookie-banner__text">
+      <strong>เราใช้คุกกี้และเทคโนโลยีที่คล้ายกัน</strong>
+      เพื่อให้เว็บไซต์ทำงานได้อย่างถูกต้อง ปรับปรุงประสบการณ์ของคุณ และวิเคราะห์การใช้งานผ่านบริการเช่น Google Analytics ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA)
+    </p>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn-cookie-secondary" id="cookie-detail-btn">รายละเอียด</button>
+      <button type="button" class="btn-cookie-primary" id="cookie-accept-btn">ยอมรับ</button>
+    </div>
+  </div>
+</div>
+
+<div id="cookie-policy-overlay" aria-hidden="true">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="cookie-policy-close" aria-label="ปิด">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-title-row">
+      <h3 class="modal-title">นโยบายคุกกี้</h3>
+    </div>
+    <div class="cookie-policy-body">
+      <h4>คุกกี้ที่จำเป็น</h4>
+      <p>คุกกี้ประเภทนี้ช่วยให้ฟังก์ชันหลักของเว็บไซต์ทำงานได้ เช่น การจดจำการตั้งค่าที่คุณเลือก และความปลอดภัยพื้นฐานของการใช้งาน</p>
+      <h4>การวิเคราะห์และประสิทธิภาพ</h4>
+      <p>เราอาจใช้เครื่องมือวิเคราะห์ (เช่น Google Analytics) เพื่อทำความเข้าใจว่าผู้เข้าชมใช้เว็บไซต์อย่างไร ซึ่งช่วยให้เราพัฒนาเนื้อหาและบริการได้ดียิ่งขึ้น ข้อมูลดังกล่าวมักอยู่ในรูปแบบที่ไม่สามารถระบุตัวบุคคลได้โดยตรง</p>
+      <h4>การจัดการความยินยอม</h4>
+      <p>เมื่อคุณกด &ldquo;ยอมรับ&rdquo; เราจะบันทึกความยินยอมของคุณไว้ในอุปกรณ์นี้เพื่อไม่ให้แสดงข้อความนี้ซ้ำเมื่อคุณกลับมาเยี่ยมชม คุณสามารถล้างข้อมูลในเบราว์เซอร์หรือลบข้อมูลไซต์ได้ตลอดเวลา</p>
+      <h4>ติดต่อเรา</h4>
+      <p>หากมีคำถามเกี่ยวกับความเป็นส่วนตัวหรือการใช้ข้อมูล โปรดติดต่อบริษัท พาร์คอินโนเวชั่นพลัส จำกัด ตามช่องทางในหน้าเว็บไซต์</p>
+    </div>
+  </div>
+</div>
 
 <!-- MODAL -->
 <div id="modal-overlay">
@@ -1014,6 +1127,36 @@ function toggleTheme() {
   document.getElementById('theme-icon-sun').style.display=isLight?'block':'none';
 }
 if(localStorage.getItem('theme')==='light'){document.body.classList.add('light');document.getElementById('theme-icon-moon').style.display='none';document.getElementById('theme-icon-sun').style.display='block';}
+
+(function () {
+  var COOKIE_CONSENT_KEY = 'pip_cookie_consent';
+  var COOKIE_ACCEPTED = 'accepted';
+  var acceptBtn = document.getElementById('cookie-accept-btn');
+  var detailBtn = document.getElementById('cookie-detail-btn');
+  var policyOverlay = document.getElementById('cookie-policy-overlay');
+  var policyClose = document.getElementById('cookie-policy-close');
+  if (!acceptBtn || !policyOverlay) return;
+
+  function openCookiePolicy() {
+    policyOverlay.classList.add('open');
+    policyOverlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeCookiePolicy() {
+    policyOverlay.classList.remove('open');
+    policyOverlay.setAttribute('aria-hidden', 'true');
+  }
+
+  acceptBtn.addEventListener('click', function () {
+    try { localStorage.setItem(COOKIE_CONSENT_KEY, COOKIE_ACCEPTED); } catch (e) {}
+    document.documentElement.classList.add('pip-cookie-accepted');
+  });
+
+  if (detailBtn) detailBtn.addEventListener('click', openCookiePolicy);
+  if (policyClose) policyClose.addEventListener('click', closeCookiePolicy);
+  policyOverlay.addEventListener('click', function (e) {
+    if (e.target === policyOverlay) closeCookiePolicy();
+  });
+})();
 </script>
 </body>
 </html>
